@@ -4,12 +4,135 @@
 }
 
 .leftsideSplash{
-  background-color: green;
-  position: relative;
-  justify-content: center;
+  /* background-color: green; */
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-.iphone{
+.phone{
   /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 570px;
+  width: auto;
+  margin: 12px;
+}
 
+.rightSideSplash{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+ width: 50%;
+  height: auto;
+
+
+}
+
+.splashLayout{
+  /* background-color: blue; */
+  height: 606px;
+  width: 350px;
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.splashFormContainer{
+  /* background-color: purple; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 360px;
+  width: 348px;
+  border: .1px solid #ffffff;
+  margin-top: 25px;
+
+  
+}
+
+.bape{
+  height: 124px;
+  width: 250px ;
+}
+
+.splashForm{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.splashFormContainer{
+  background-color: white;
+}
+
+.divider{
+  display: flex;
+  flex-direction: row;
+}
+
+.or{
+  display: flex;
+  flex-direction: row;
+  /* padding-left: 22px; */
+}
+
+.or:before, .or:after {
+  content: "";
+  flex: 2 2;
+  width: 70px;
+  margin-top: 50px;
+  border-bottom: .5px solid #e2e2e2;
+  margin: auto;
+}
+
+
+.signUpSplash{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.splashButton{
+  height: 40px;
+  width: auto;
+}
+
+.signUpContainer{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  border: .1px solid #ffffff;
+  width: 348px;
+  height: 41px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+
+}
+
+.bathing{
+  position: absolute;
+  height: 300px;
+
+  width: 232px;
+  left: 368px;
+  top: 215px;
+}
+
+.mamo{
+  position: absolute;
+  width: 232px;
+  height: 112px;
+  left: 368px;
+  top: 104.5px;
 }
