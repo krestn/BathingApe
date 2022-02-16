@@ -9,9 +9,9 @@ function Splash() {
 
     <div className='splashPage'>
       <div className='leftsideSplash'>
-          <img className='phone' src='/images/iphone.png' alt="iPhone" />
-          <img className='bathing' src='/images/bathing.png' alt="bape" />
-          <img className='mamo' src='/images/mamo.png' alt="mamo" />
+        <img className='phone' src='/images/iphone.png' alt="iPhone" />
+        <img className='bathing' src='/images/bathing.png' alt="bape" />
+        <img className='mamo' src='/images/mamo.png' alt="mamo" />
 
 
 
@@ -19,13 +19,32 @@ function Splash() {
       <div className='rightSideSplash'>
         <div className='splashLayout'>
           <div className='splashFormContainer'>
-            <img className="bape"src='/images/bape.png' alt='Bathing Ape'/>
-            <form className='splashForm'>
-              <input type="text" name="name" placeholder='Phone number, username, or email' />
-              <input type="text" name="name" placeholder='Password' />
+            <img className="bape" src='/images/bape.png' alt='Bathing Ape' />
+            <div className='splashFormContainer'>
+              <form className='splashForm'>
 
-              <input type="submit" value="Log In" />
-            </form>
+                <div>
+                  <div>
+                    <input className='formField' type="text" name="name" placeholder='Phone number, username, or email' />
+                    <div></div>
+                  </div>
+                </div>
+
+
+                <div>
+                  <div>
+                    <input className='formField' type="text" name="name" placeholder='Password' />
+                    <div></div>
+                  </div>
+
+
+                </div>
+                <div className='formButtonContainer'>
+
+                  <input className='formButton' type="submit" value="Log In" />
+                </div>
+              </form>
+            </div>
             <div className='divider'>
               {/* <div className='line'></div> */}
               <p className='or'>  OR  </p>
@@ -33,7 +52,7 @@ function Splash() {
 
             </div>
             <div>
-              <button>Log in with Demo</button>
+              <button className='demo'>Log in with Demo</button>
             </div>
 
 
@@ -44,14 +63,14 @@ function Splash() {
           <div className='signUpSplash'>
             <div className='signUpContainer'>
 
-            <div>Don't have an account? 
-            </div>
+              <div className="noAccount" >Don't have an account?
+              </div>
 
-            <NavLink to='/signup'>{` Sign up`}</NavLink>
+              <NavLink classame='signUpLink' to='/signup'>{` Sign up`}</NavLink>
             </div>
           </div>
 
-          <p>Get the app.</p>
+          <p className='getApp'>Get the app.</p>
           <div>
             <img className='splashButton' src='/images/button1.png' alt='button' />
             <img className='splashButton' src='/images/button2.png' alt='button' />
