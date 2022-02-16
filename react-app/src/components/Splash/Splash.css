@@ -1,0 +1,15 @@
+.splashPage{
+  display: flex;
+
+}
+
+.leftsideSplash{
+  background-color: green;
+  position: relative;
+  justify-content: center;
+}
+
+.iphone{
+  /* margin: 0 auto; */
+
+}
