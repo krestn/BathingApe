@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
-import { authenticate } from './store/session';
-import Splash from './components/Splash';
+import LoginForm from './auth/LoginForm';
+import SignUpForm from './auth/SignUpForm';
+import NavBar from './NavBar';
+import ProtectedRoute from './auth/ProtectedRoute';
+import UsersList from './UsersList';
+import User from './User';
+import { authenticate } from '../store/session';
+import Splash from './Splash';
 import './index.css'
-import HomePage from './components/HomePage'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -44,7 +43,8 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true}>
-          <HomePage/>
+          <Splash></Splash>
+          <NavBar></NavBar>
         </Route>
       </Switch>
     </BrowserRouter>

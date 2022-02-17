@@ -2,6 +2,7 @@
 import './Splash.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import LoginForm from '../auth/LoginForm';
 
 function Splash() {
   return (
@@ -9,9 +10,9 @@ function Splash() {
 
     <div className='splashPage'>
       <div className='leftsideSplash'>
-        <img className='phone' src='/images/iphone.png' alt="iPhone" />
-        <img className='bathing' src='/images/bathing.png' alt="bape" />
-        <img className='mamo' src='/images/mamo.png' alt="mamo" />
+        <img className='phone' src='/images/iphone.jpg' alt="iPhone" />
+        {/* <img className='bathing' src='/images/bathing.png' alt="bape" />
+        <img className='mamo' src='/images/mamo.png' alt="mamo" /> */}
 
 
 
@@ -21,29 +22,9 @@ function Splash() {
           <div className='splashFormContainer'>
             <img className="bape" src='/images/bape.png' alt='Bathing Ape' />
             <div className='splashFormContainer'>
-              <form className='splashForm'>
+        
+              <LoginForm></LoginForm>
 
-                <div>
-                  <div>
-                    <input className='formField' type="text" name="name" placeholder='Phone number, username, or email' />
-                    <div></div>
-                  </div>
-                </div>
-
-
-                <div>
-                  <div>
-                    <input className='formField' type="text" name="name" placeholder='Password' />
-                    <div></div>
-                  </div>
-
-
-                </div>
-                <div className='formButtonContainer'>
-
-                  <input className='formButton' type="submit" value="Log In" />
-                </div>
-              </form>
             </div>
             <div className='divider'>
               {/* <div className='line'></div> */}

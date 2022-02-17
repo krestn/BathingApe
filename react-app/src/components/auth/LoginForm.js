@@ -31,32 +31,37 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <form className='splashForm' onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
+
+      
       <div>
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='email'></label>
         <input
+          className='formField'
           name='email'
           type='text'
-          placeholder='Email'
+          placeholder='Phone number, username, or email' 
           value={email}
           onChange={updateEmail}
         />
       </div>
       <div>
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'></label>
         <input
+          className='formField'
+          placeholder='Password' 
           name='password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
+        <button className='formButton' type='submit'>Login</button>
       </div>
     </form>
   );
