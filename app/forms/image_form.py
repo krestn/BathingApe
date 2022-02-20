@@ -4,7 +4,7 @@ from wtforms import StringField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, Length, EqualTo
 
 class ImageForm(FlaskForm):
-    url = StringField("URL: ", validators=[DataRequired(), Length(min=8, max=64, message="Please enter a valid URL")])
+    url = StringField("URL: ", validators=[DataRequired(), Length(min=8, max=1000, message="Please enter a valid URL")])
     caption = StringField("Caption: ", validators=[Length(max=2200, message="Please limit the text in the caption to be less than 2200 characters!")])
     user_id = IntegerField("", validators={DataRequired()})
     submit = SubmitField("Submit")
