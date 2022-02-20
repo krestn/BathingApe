@@ -3,7 +3,6 @@ import './Splash.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LoginForm from '../auth/LoginForm';
-
 function Splash() {
   return (
 

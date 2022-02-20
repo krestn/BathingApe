@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import AddImageModal from './AddImageModal'
 
 const NavBar = () => {
   return (
@@ -27,6 +28,10 @@ const NavBar = () => {
             Users
           </NavLink>
         </li> */}
+        <div>
+          <AddImageModal />
+        </div>
+
         <li>
           <LogoutButton />
         </li>
