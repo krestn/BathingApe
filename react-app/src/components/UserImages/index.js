@@ -25,15 +25,22 @@ function UserImages() {
 
   return (
     <div className='images'>
-      {images?.map(image => <div key={image.id}>
-        <img className='postImage' src={`${image[1].url}`} alt="image"></img>
-        <div onClick={() => {
+      {images?.map(image => <div className='imageContainer' key={image.id}>
+        <img className='image' src={`${image[1].url}`} alt="image">
+        </img>
+          <button class="likeButton">Like</button>
+          <button class="deleteButton">Delete</button>
+
+        <div className='captionContainer'>
+        <div class="caption" onClick={() => {
           setShowModal(true);
           setCaption(image[1].caption);
           setImageId(image[1].id);
           setURL(image[1].url);
 
-        }}>{image[1].caption}  </div>
+        }}>{image[1].caption}  <span class="captionEdit">Click to edit</span>
+        </div>
+        </div>
 
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>

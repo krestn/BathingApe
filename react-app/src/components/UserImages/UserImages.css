@@ -1,4 +1,74 @@
-.postImage{
-  height: 50px;
-  width: auto;
+.image{
+  height: 200px;
+  width:auto;
+}
+
+.imageContainer {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.likeButton {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  z-index: 1;
+}
+
+.deleteButton {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+
+.imageContainer:hover > .likeButton {
+  visibility: visible;
+}
+
+.imageContainer:hover > .deleteButton {
+  visibility: visible;
+}
+
+
+.caption .captionEdit {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.caption:hover .captionEdit {
+  visibility: visible;
+}
+
+.captionContainer{
+  width: 75px;
 }
