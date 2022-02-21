@@ -1,0 +1,21 @@
+.NavContainer{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50px;
+  width: 100vw;
+  left: 0px;
+  background-color: white;
+}
+
+.addImage{
+  width: 50px;
+
+}
+
+
+.logout{
+  width: 50px;
+}

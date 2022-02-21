@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
-import AddImageModal from './AddImageModal'
+import LogoutButton from '../auth/LogoutButton';
+import AddImageModal from '../AddImageModal'
+import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <nav>
-      <ul>
+    <nav className='NavContainer'> 
         {/* <li>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
@@ -28,14 +28,13 @@ const NavBar = () => {
             Users
           </NavLink>
         </li> */}
-        <div>
+        <div className='addImage'>
           <AddImageModal />
         </div>
 
-        <li>
+        <div className='logout'>
           <LogoutButton />
-        </li>
-      </ul>
+        </div>
     </nav>
   );
 }

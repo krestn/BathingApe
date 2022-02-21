@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Splash from '../Splash';
 import NavBar from '../NavBar'
 import UserImages from '../UserImages';
+import "./HomePage.css"
 
 
 function HomePage() {
@@ -20,8 +21,7 @@ function HomePage() {
 
   else {
     return (
-      <div>
-        <p>Logged in as {user.username}</p>
+      <div className='homePage'> 
         <NavBar />
         <UserImages />
       </div>
