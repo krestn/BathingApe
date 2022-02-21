@@ -24,6 +24,8 @@ function HomePage() {
       <div className='homePage'> 
         <NavBar />
         <UserImages />
+        <div className='profile'></div>
+        <div className='friends'></div>
       </div>
     )
   }

@@ -1,0 +1,16 @@
+.addImage{
+  padding: 0;
+border: none;
+background: none;
+
+align-items: center;
+border-radius: 21px;
+margin: 10px;
+background: #e0e0e0;
+box-shadow:  5px 5px 15px #b3b3b3,
+             -5px -5px 15px #ffffff;
+}
+
+.addImage:hover{
+  cursor: pointer;
+}

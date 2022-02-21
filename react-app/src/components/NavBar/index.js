@@ -28,7 +28,8 @@ const NavBar = () => {
             Users
           </NavLink>
         </li> */}
-        <div className='addImage'>
+        <img src='/images/bape.png' alt=''></img>
+        <div className=''>
           <AddImageModal />
         </div>
 

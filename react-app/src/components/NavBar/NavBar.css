@@ -4,9 +4,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  height: 50px;
+  height: 12.5%;
   width: 100vw;
   left: 0px;
+  top: 0px;
   background-color: white;
 }
 

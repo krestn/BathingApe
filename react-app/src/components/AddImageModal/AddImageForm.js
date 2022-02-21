@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as imageActions from '../../store/images';
+import './AddImage.css'
 import { useDispatch, useSelector } from 'react-redux';
 
 function AddImageForm({ setShowModal }) {
@@ -69,7 +70,7 @@ function AddImageForm({ setShowModal }) {
                 />
 
                 <div className='form-button-container'>
-                    <button className='form-button'>Add Image</button>
+                    <button>Add Image</button>
                 </div>
             </form>
         </div>

@@ -9,7 +9,7 @@ function AddImageFormModal() {
 
   return (
     <>
-      <button className='addDeckButton' onClick={() => setShowModal(true)}>Add Image</button>
+      <button className='addImage' onClick={() => setShowModal(true)}>+</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <AddImageForm setShowModal={setShowModal} />

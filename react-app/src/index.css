@@ -2,3 +2,24 @@ body{
   background-color: #92b6d6;
   
 }
+
+.logOutButton{
+  padding: 0;
+  border: none;
+  background: none;
+  width: 50px;
+  align-items: center;
+  border-radius: 21px;
+  background: #e0e0e0;
+  box-shadow:  5px 5px 15px #b3b3b3,
+               -5px -5px 15px #ffffff;
+
+}
+
+.logOutButton:hover{
+  cursor: pointer;
+}
+
+.logout{
+  margin-right: 25px;
+}
