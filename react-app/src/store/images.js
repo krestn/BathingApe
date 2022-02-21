@@ -74,13 +74,13 @@ export const editImage = image => async (dispatch) => {
 }
 
 export const deleteImage = commit => async (dispatch) => {
-    const currImage = await fetch(`/api/imagess/${commit.image_id}`, {
+    const currImage = await fetch(`/api/images/${commit.id}`, {
         headers: {
             "Content-Type": "application/json"
         }
     });
     if (currImage.ok) {
-        const delImage = await fetch(`/api/images/${commit.image_id}`,
+        const delImage = await fetch(`/api/images/${commit.id}`,
             {
                 headers: {
                     "Content-Type": "application/json"

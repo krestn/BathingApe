@@ -1,10 +1,13 @@
 from flask import Blueprint, session, request, make_response
 from app.models import db, Image
 from flask_login import current_user, login_required
-from app.forms import ImageForm
+from app.forms import ImageForm, DeleteForm
+
+
 
 
 image_routes = Blueprint("images", __name__)
+
 
 def validation_errors_to_error_messages(validation_errors):
     """
@@ -15,7 +18,6 @@ def validation_errors_to_error_messages(validation_errors):
         for error in validation_errors[field]:
             errorMessages.append(f'{field.capitalize()} : {error}')
     return errorMessages
-
 
 
 @image_routes.route('/', methods=['POST', 'GET'])
@@ -76,3 +78,18 @@ def single_image(id):
         elif form.errors:
             return {'errors': validation_errors_to_error_messages(form.errors)}, 401
     return image.to_dict()
+
+
+@image_routes.route('/<int:id>', methods=['DELETE'])
+def delete_image(id):
+    """
+    DELETE requests delete the image from the database
+    """
+    form = DeleteForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        image = Image.query.get(id)
+        db.session.delete(image)
+        db.session.commit()
+        return image.to_dict(), 200
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401

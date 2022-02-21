@@ -4,6 +4,7 @@ import * as imageActions from "../../store/images";
 import './UserImages.css'
 import { Modal } from '../../context/Modal';
 import EditCaptionForm from '../EditCaptionModal'
+import DeleteModal from '../DeleteModal'
 
 
 function UserImages() {
@@ -25,11 +26,14 @@ function UserImages() {
 
   return (
     <div className='images'>
-      {images?.map(image => <div className='imageContainer' key={image.id}>
+      {images?.map(image => <div className='imageContainer' onClick={()=> setImageId(image[1].id)} key={image.id}>
         <img className='image' src={`${image[1].url}`} alt="image">
         </img>
           <button class="likeButton">Like</button>
-          <button class="deleteButton">Delete</button>
+
+          
+          <DeleteModal imageId={imageId}/>
+
 
         <div className='captionContainer'>
         <div class="caption" onClick={() => {
@@ -48,7 +52,6 @@ function UserImages() {
           </Modal>
         )}
       </div>)}
-      {console.log(imageId)}
 
 
 

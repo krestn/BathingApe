@@ -10,8 +10,8 @@ class ImageForm(FlaskForm):
     submit = SubmitField("Submit")
 
 
-class DeleteImageForm(FlaskForm):
-    image_id = IntegerField("", validators=[DataRequired()])
-    curr_user_id = IntegerField("", validators=[DataRequired(), EqualTo('image_user_id', message='Error! You are not authorized to delete this card')])
-    image_user_id = IntegerField("", validators=[DataRequired(), EqualTo('curr_user_id', message='Error! You are not authorized to delete this card')])
+class DeleteForm(FlaskForm):
+    id = IntegerField("", validators=[DataRequired()])
+    # curr_user_id = IntegerField("", validators=[DataRequired(), EqualTo('image_user_id', message='Error! You are not authorized to delete this card')])
+    # image_user_id = IntegerField("", validators=[DataRequired(), EqualTo('curr_user_id', message='Error! You are not authorized to delete this card')])
     submit = SubmitField("Submit")
