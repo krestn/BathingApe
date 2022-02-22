@@ -13,14 +13,7 @@ import { getTheLikes, setOneLike, unOneLike } from "../../store/likes";
 import EditFormPage from "../EditFormPage";
 import ImagePage from "../ImagePage";
 import NavBar from "../Navbar";
-import {
-  HeartIcon,
-  ChatIcon,
-  DotsHorizontalIcon,
-} from "@heroicons/react/outline";
-import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
-import Avatar from "@mui/material/Avatar";
-import "./imagesPage.css";
+
 
 function ImagesPage() {
   const userId = useSelector((state) => state.session.user.id);
@@ -204,7 +197,9 @@ function ImagesPage() {
                   className="post-ava-name"
                   onClick={(event) => history.push(`/users/${image.user_id}`)}
                 >
-                  <Avatar className="post-avatar" srcSet={getUser(image.user_id)?.avatar}/>
+                  <p className="post-avatar" 
+                  // srcSet={getUser(image.user_id)?.avatar}
+                  >Avatar</p>
                   <li>{getUser(image.user_id)?.username}</li>
                 </div>
               </div>
@@ -245,17 +240,16 @@ function ImagesPage() {
                   onClick={handleLike}
                 ></div>
                 {checkIfLiked(image.id) ? (
-                  <HeartIconFilled className="post-footer-icon liked-icon" />
+                  <p className="post-footer-icon liked-icon"> Liked</p>
                 ) : (
-                  <HeartIcon className="post-footer-icon" id="heart-icon"/>
+                  <p className="post-footer-icon" id="heart-icon"> Not liked</p>
                 )}
-                <ChatIcon
+                <p
                   onClick={() => {
                     setImageButtonPopup(image.id);
                     body.style.overflow = "hidden";
                   }}
-                  className="post-footer-icon"
-                />
+                  className="post-footer-icon">Chat</p>
               </div>
               {getImageLikes(image.id).length > 0 && (
                 <div className="num-of-likes-div">
@@ -332,10 +326,10 @@ function ImagesPage() {
               </div>
               {userId === image.user_id && (
                 <div>
-                  <DotsHorizontalIcon
+                  <p
                     onClick={() => setShowOptions(!showOptions)}
-                    className="post-options-icon"
-                  />
+                    className="post-options-icon"> ... </p>
+                  
                   <EditFormPage
                     trigger={editButtonPopup}
                     setTrigger={setEditButtonPopup}

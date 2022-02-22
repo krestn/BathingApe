@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import LoginForm from "./components/auth/LoginForm/";
-import SignUpForm from "./components/auth/SignUpForm/";
+import LoginForm from "./components/auth/LoginForm.js";
+import SignUpForm from "./components/auth/SignUpForm.js";
 import NavBar from "./components/Navbar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import ImagesPage from "./components/imagesPage";
-import CreateImagePage from "./components/CreateImagePage";
 import { authenticate } from "./store/session";
 import ProfilePage from "./components/ProfilePage";
 import HomePage from "./components/HomePage";
@@ -37,9 +36,6 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/posts/new" exact={true}>
-          <CreateImagePage />
-        </ProtectedRoute>
         <ProtectedRoute path="/users" exact={true}>
           <UsersList />
         </ProtectedRoute>

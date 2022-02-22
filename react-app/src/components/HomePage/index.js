@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getImages, deleteOneImage, getUserImages } from "../../store/image";
 import { getFollowers, getFollowings } from "../../store/follow";
-import "./HomePage.css";
 import {
   getComments,
   createComment,
@@ -15,13 +14,7 @@ import EditFormPage from "../EditFormPage";
 import ImagePage from "../ImagePage";
 import NavBar from "../Navbar";
 import SideBar from "../SideBar";
-import {
-  HeartIcon,
-  ChatIcon,
-  DotsHorizontalIcon,
-} from "@heroicons/react/outline";
-import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
-import Avatar from "@mui/material/Avatar";
+
 function HomePage() {
   const userId = useSelector((state) => state.session.user.id);
   const history = useHistory();
@@ -225,11 +218,7 @@ function HomePage() {
                   className="post-ava-name"
                   onClick={(event) => history.push(`/users/${image.user_id}`)}
                 >
-                  <Avatar
-                  srcSet={getUser(image.user_id)?.avatar}
-                    className="post-avatar"
-                    onClick={(event) => history.push(`/users/${image.user_id}`)}
-                  />
+                  <p onClick={(event) => history.push(`/users/${image.user_id}`)}>Avatar</p>
                   <li>{getUser(image.user_id)?.username}</li>
                 </div>
               </div>
@@ -270,17 +259,17 @@ function HomePage() {
                   onClick={handleLike}
                 ></div>
                 {checkIfLiked(image.id) ? (
-                  <HeartIconFilled className="post-footer-icon liked-icon" />
+                  <p>Liked</p>
                 ) : (
-                  <HeartIcon className="post-footer-icon" />
+                  <p>Not Liked</p>
                 )}
-                <ChatIcon
+                <p
                   onClick={() => {
                     setImageButtonPopup(image.id);
                     body.style.overflow = "hidden";
                   }}
-                  className="post-footer-icon"
-                />
+                  className="post-footer-icon"> Chart
+                </p>
               </div>
               {getImageLikes(image.id).length > 0 && (
                 <div className="num-of-likes-div">
@@ -323,16 +312,16 @@ function HomePage() {
               })}
               {commentsArray.filter((comment) => image.id === comment.image_id)
                 .length > 2 && (
-                <p
-                  className="posts-view-comments"
-                  onClick={() => {
-                    setImageButtonPopup(image.id);
-                    body.style.overflow = "hidden";
-                  }}
-                >
-                  View all comments...
-                </p>
-              )}
+                  <p
+                    className="posts-view-comments"
+                    onClick={() => {
+                      setImageButtonPopup(image.id);
+                      body.style.overflow = "hidden";
+                    }}
+                  >
+                    View all comments...
+                  </p>
+                )}
               <div className="comment-container-div">
                 <form
                   id="form-comment-con"
@@ -359,10 +348,11 @@ function HomePage() {
               </div>
               {userId === image.user_id && (
                 <div>
-                  <DotsHorizontalIcon
+                  <p
                     onClick={() => setShowOptions(!showOptions)}
-                    className="post-options-icon"
-                  />
+                    className="post-options-icon"> ...
+                  </p>
+
                   <EditFormPage
                     trigger={editButtonPopup}
                     setTrigger={setEditButtonPopup}

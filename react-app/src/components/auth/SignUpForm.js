@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Avatar from "@mui/material/Avatar";
 import { NavLink, Redirect } from "react-router-dom";
-import {UploadIcon} from '@heroicons/react/outline'
-import { signUp } from "../../../store/session";
-import "./SignUpForm.css";
+import { signUp } from "../../store/session.js";
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -113,20 +110,21 @@ const SignUpForm = () => {
             <label className="signup-label">Confirm Password</label>
           </div>
           <label for="file-upload" className="file-input-con">
-              <div className="avatar-upload-con">
-                <div className="file-button-con">
-                  <UploadIcon width={16} />
-                  <p>Upload File...</p>
-                </div>
-                <Avatar src={image && URL.createObjectURL(image)}/>
+            <div className="avatar-upload-con">
+              <div className="file-button-con">
+                <p>Upload File...</p>
               </div>
-            </label>
-            <input
-              type="file"
-              onChange={updateImage}
-              id="file-upload"
-              className="hide-upload-button"
-            />
+              <p
+              // src={image && URL.createObjectURL(image)}
+              >Avatar</p>
+            </div>
+          </label>
+          <input
+            type="file"
+            onChange={updateImage}
+            id="file-upload"
+            className="hide-upload-button"
+          />
           <button type="submit">Sign Up</button>
         </form>
         <div className="sign-up-login-con">

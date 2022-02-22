@@ -5,8 +5,6 @@ import { getComments } from "../../store/comment";
 import { followUser, getFollowers, getFollowings, addToFollowing } from "../../store/follow";
 import { getUserImages } from "../../store/image";
 import { getTheLikes } from "../../store/likes";
-import Avatar from "@mui/material/Avatar";
-import "./SideBar.css";
 
 const SideBar = (props) => {
   const user = useSelector((state) => state.session.user);
@@ -51,7 +49,9 @@ const SideBar = (props) => {
         className="sidebar-header"
         onClick={() => history.push(`/users/${user.id}`)}
       >
-        <Avatar srcSet={user.avatar} className="sidebar-avatar" sx={{ width: 84, height: 84 }}/>
+        <p 
+        // srcSet={user.avatar} className="sidebar-avatar" sx={{ width: 84, height: 84 }}
+        >Avatar</p>
         <div className="sb-username-email">
           <p className="sidebar-username">{user.username}</p>
           <p className="sidebar-email">{user.email}</p>
@@ -68,7 +68,9 @@ const SideBar = (props) => {
                   onClick={() => history.push(`/users/${userToFollow.id}`)}
                 >
                   <div className="suggestion-avatar">
-                    <Avatar srcSet={userToFollow.avatar} />
+                    <p
+                    // srcSet={userToFollow.avatar}
+                     >Avatar</p>
                   </div>
                   <p className="suggestion-username">{userToFollow.username}</p>
                 </div>
