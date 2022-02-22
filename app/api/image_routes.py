@@ -3,7 +3,7 @@ from flask_login import login_required, current_user
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 from app.models import Image, Comment, db
-from app.forms import CreateGameForm, EditGameForm, CreateCommentForm, EditCommentForm
+from app.forms import CreatePostForm, EditPostForm, CreateCommentForm, EditCommentForm
 
 image_routes = Blueprint('images', __name__)
 
@@ -25,7 +25,7 @@ def get_image(id):
 def edit_image(id):
     image = Image.query.get(id)
 
-    form = EditGameForm()
+    form = EditPostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     image.caption = form.data['caption']
@@ -51,7 +51,7 @@ def delete_image(id):
 @image_routes.route("", methods=["POST"])
 @login_required
 def upload_image():
-    form = CreateGameForm()
+    form = CreatePostForm()
 
     form['csrf_token'].data = request.cookies['csrf_token']
 

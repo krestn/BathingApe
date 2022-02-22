@@ -4,41 +4,41 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        username='Demo', email='demo@gamestagram.com', password='password')
+        username='Demo', email='demo@bape.com', password='password')
     knox = User(
-        username='knox', email='knox@gamestagram.com', password='password')
+        username='knox', email='knox@bape.com', password='password')
     kobe = User(
-        username='kobe', email='kobe@gamestagram.com', password='password')
+        username='kobe', email='kobe@bape.com', password='password')
     bape = User(
-        username='bape', email='bape@gamestagram.com', password='password')
+        username='bape', email='bape@bape.com', password='password')
     quest = User(
-        username='quest', email='quest@gamestagram.com', password='password')
+        username='quest', email='quest@bape.com', password='password')
     wolve = User(
-        username='wolve', email='wolve@gamestagram.com', password='password')
+        username='wolve', email='wolve@bape.com', password='password')
     navy = User(
-        username='navy', email='navy@gamestagram.com', password='password')
+        username='navy', email='navy@bape.com', password='password')
     courtney = User(
-        username='courtney', email='courtney@gamestagram.com', password='password')
+        username='courtney', email='courtney@bape.com', password='password')
     colin = User(
-        username='colin', email='colin@gamestagram.com', password='password')
+        username='colin', email='colin@bape.com', password='password')
     grey = User(
-        username='grey', email='grey@gamestagram.com', password='password')
+        username='grey', email='grey@bape.com', password='password')
     koah = User(
-        username='koah', email='koah@gamestagram.com', password='password')
+        username='koah', email='koah@bape.com', password='password')
     bronx = User(
-        username='bronx', email='bronx@gamestagram.com', password='password')
+        username='bronx', email='bronx@bape.com', password='password')
     kalika = User(
-        username='kalika', email='kalika@gamestagram.com', password='password')
+        username='kalika', email='kalika@bape.com', password='password')
     ty = User(
-        username='ty', email='ty@gamestagram.com', password='password')
+        username='ty', email='ty@bape.com', password='password')
     rafiki = User(
-        username='rafiki', email='rafiki@gamestagram.com', password='password')
+        username='rafiki', email='rafiki@bape.com', password='password')
     don = User(
-        username='don', email='don@gamestagram.com', password='password')
+        username='don', email='don@bape.com', password='password')
     houston = User(
-        username='houston', email='houston@gamestagram.com', password='password')
+        username='houston', email='houston@bape.com', password='password')
     prince = User(
-        username='prince', email='prince@gamestagram.com', password='password')
+        username='prince', email='prince@bape.com', password='password')
 
     demo.following.append(prince)
     demo.following.append(houston)
