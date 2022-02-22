@@ -10,12 +10,7 @@ import {
   unfollowUser,
 } from "../../store/follow";
 import { useParams } from "react-router-dom";
-import {
-  UserAddIcon,
-} from "@heroicons/react/outline";
-import { HeartIcon, UserIcon, ChatIcon } from "@heroicons/react/solid";
-import Avatar from "@mui/material/Avatar";
-import "./ProfilePage.css";
+
 import NavBar from "../Navbar";
 
 const ProfilePage = (props) => {
@@ -73,7 +68,9 @@ const ProfilePage = (props) => {
       <NavBar />
       <header className="profile-header-container">
         <div className="profile-avatar">
-          <Avatar srcSet={getUser(profileId)?.avatar} sx={{ width: 150, height: 150 }} />
+          <p
+          //  srcSet={getUser(profileId)?.avatar} 
+           sx={{ width: 150, height: 150 }}>Avatar</p>
         </div>
         <div className="column">
           <div className="profile-top-row">
@@ -87,14 +84,14 @@ const ProfilePage = (props) => {
                     className="profile-follow-button"
                     onClick={(event) => followProfileUser(profileId)}
                   >
-                    <UserAddIcon width={18} />
+                    <p width={18}>Add User</p> 
                   </button>
                 ) : (
                   <button
                     className="profile-unfollow-button"
                     onClick={(event) => unfollowProfileUser(profileId)}
                   >
-                    <UserIcon width={18} />
+                    <p width={18}>User Icon</p>
                   </button>
                 )}
               </div>
@@ -132,11 +129,11 @@ const ProfilePage = (props) => {
               ></img>
               <div className="image-info">
                 <p className="info-container">
-                  <HeartIcon className="profile-image-heart" />
+                  <p className="profile-image-heart">Heart</p>
                   {getLikes(image.id)}
                 </p>
                 <p className="info-container">
-                  <ChatIcon className="profile-image-comment" />
+                  <p className="profile-image-comment"> Chat </p>
                   {checkComments(image.id)}
                 </p>
               </div>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import './SelectImagePage.css'
-import { XIcon } from "@heroicons/react/outline";
 import { getImages } from "../../store/image";
 
 const SelectImagePage = (props) => {
@@ -70,10 +68,10 @@ const SelectImagePage = (props) => {
             <div className="modal-container">
                 <div className="new-post-text">
                     <p>Create A New Post</p>
-                    <XIcon
+                    <p
                         className="X"
                         onClick={e => props.setTrigger(false)}
-                    />
+                    >X</p>
                 </div>
                 <form className="modal-form" onSubmit={handleSubmit}>
                     <ul>

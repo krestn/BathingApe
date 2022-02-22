@@ -3,16 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getImage, deleteOneImage } from "../../store/image";
 import { createComment } from "../../store/comment";
 import { getTheLikes, setOneLike, unOneLike } from "../../store/likes";
-import {
-  XIcon,
-  HeartIcon,
-  ChatIcon,
-  DotsHorizontalIcon,
-} from "@heroicons/react/outline";
-import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
-import Avatar from "@mui/material/Avatar";
+
 import EditFormPage from "../EditFormPage";
-import "./ImagePage.css";
 import { useHistory } from "react-router-dom";
 
 const ImagePage = (props) => {
@@ -129,25 +121,23 @@ const ImagePage = (props) => {
         </div>
         <div className="image-page-right">
           <div className="image-page-header">
-            <Avatar
-              srcSet={getUser(props.image.user_id)?.avatar}
-              className="image-page-avatar"
-            />
-            <p>{getUser(props.image.user_id)?.username}</p>
+            <p
+              // srcSet={getUser(props.image.user_id)?.avatar}
+              className="image-page-avatar"> Avatar</p>
+            {/* <p>{getUser(props.image.user_id)?.username}</p> */}
             {props.image.user_id === userId && (
-              <DotsHorizontalIcon
+              <p
                 className="image-options-icon"
-                onClick={() => setShowImageOptions(!showImageOptions)}
-              />
+                onClick={() => setShowImageOptions(!showImageOptions)}> ... </p>
             )}
           </div>
           {props.commentsArray && (
             <div className="image-page-comment-container">
               <div className="image-page-user-caption-con">
-                <Avatar
-                  srcSet={getUser(props.image.user_id)?.avatar}
-                  className="image-page-caption-avatar"
-                />
+                <p
+                  // srcSet={getUser(props.image.user_id)?.avatar}
+                  className="image-page-caption-avatar"> Avatar</p>
+
                 <div className="image-page-username">
                   {getUser(props.image.user_id)?.username}
                 </div>
@@ -168,11 +158,9 @@ const ImagePage = (props) => {
                             document.body.style.overflow = "visible";
                           }}
                         >
-                          <Avatar
-                          sx={{ width: 32, height: 32 }}
-                            srcSet={getUser(comment.user_id)?.avatar}
-                            className="image-page-comment-avatar"
-                          />
+                          <p
+                            // srcSet={getUser(comment.user_id)?.avatar}
+                            className="image-page-comment-avatar">Avatar</p>
                           <p className="image-page-comment-username">
                             {getUser(comment.user_id)?.username}
                           </p>
@@ -183,11 +171,10 @@ const ImagePage = (props) => {
                           </p>
                         </div>
                         {comment.user_id === userId && (
-                          <DotsHorizontalIcon
+                          <p
                             className="ind-comment-option-toggle"
                             id={`comment-options-${comment.id}`}
-                            onClick={() => setShowEditDelete(comment.id)}
-                          />
+                            onClick={() => setShowEditDelete(comment.id)}> ... </p>
                         )}
                       </div>
                       {showEditDelete === comment.id &&
@@ -232,17 +219,15 @@ const ImagePage = (props) => {
           <div className="image-page-footer">
             <div className="image-page-options-container">
               {checkIfLiked(props.image.id) ? (
-                <HeartIconFilled
+                <p
                   className={`post-footer-icon ${props.image.id} liked-icon`}
-                  onClick={handleUnlike}
-                />
+                  onClick={handleUnlike}>Liked</p>
               ) : (
-                <HeartIcon
+                <p
                   className={`post-footer-icon ${props.image.id}`}
-                  onClick={newHandleLike}
-                />
+                  onClick={newHandleLike}>Not liked</p>
               )}
-              <ChatIcon
+              <p
                 className="image-page-options-icon"
                 onClick={() => {
                   if (commentShowB === props.image.id) {
@@ -254,7 +239,7 @@ const ImagePage = (props) => {
                   setContentB("");
                   setEditB(false);
                 }}
-              />
+              >Chat</p>
             </div>
             {editB === false &&
               props.postCommentForm(
@@ -275,12 +260,12 @@ const ImagePage = (props) => {
           </div>
 
           <button className="x-button-wrap" onClick={() => props.setTrigger(0)}>
-            <XIcon
+            <p
               onClick={() => {
                 body.style.overflow = "visible";
               }}
               className="image-page-close"
-            />
+            >X</p>
           </button>
         </div>
       </div>
