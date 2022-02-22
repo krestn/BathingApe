@@ -59,18 +59,26 @@ def upload_image():
         return {"errors": "image required"}, 400
 
     image = request.files["image"]
+    print(image)
 
     if not allowed_file(image.filename):
+        print('not allowed')
+
         return {"errors": "file type not permitted"}, 400
 
     image.filename = get_unique_filename(image.filename)
+    print(image.filename)
+
 
     upload = upload_file_to_s3(image)
+    print(upload)
 
     if "url" not in upload:
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
         # so we send back that error message
+        print('no url')
+
         return upload, 400
 
     url = upload["url"]
@@ -108,6 +116,7 @@ def create_comment(id):
         return new_comment.to_dict()
     return {"error": form.errors}
 
+
 @image_routes.route('/<int:image_id>/comments/<int:comment_id>', methods=["PUT"])
 @login_required
 def edit_comment(image_id, comment_id):
@@ -121,12 +130,14 @@ def edit_comment(image_id, comment_id):
 
     return comment.to_dict()
 
+
 @image_routes.route('/<int:image_id>/comments/<int:comment_id>', methods=["DELETE"])
 @login_required
 def delete_comment(image_id, comment_id):
     comment = Comment.query.get(comment_id)
     result = comment.to_dict()
-    comment = db.session.query(Comment).filter(Comment.id == comment_id).first()
+    comment = db.session.query(Comment).filter(
+        Comment.id == comment_id).first()
     db.session.delete(comment)
 
     db.session.commit()
