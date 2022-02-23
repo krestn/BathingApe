@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getImages } from "../../store/image";
+import './SelectImagePage.css'
 
 const SelectImagePage = (props) => {
 
@@ -80,13 +81,13 @@ const SelectImagePage = (props) => {
                             <li className="display-errors" key={err}>{err}</li>
                         ))}
                     </ul>
-                        <input
-                            className="file-thing"
-                            type="file"
-                            accept="image/*"
-                            onChange={updateImage}
-                            onClick={e => e.target.style.color = "black"}
-                        />
+                    <input
+                        className="file-thing"
+                        type="file"
+                        accept="image/*"
+                        onChange={updateImage}
+                        onClick={e => e.target.style.color = "black"}
+                    />
                     <div className="upload">
                         <label>Caption</label>
                         <input

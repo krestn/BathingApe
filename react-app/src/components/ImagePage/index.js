@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getImage, deleteOneImage } from "../../store/image";
 import { createComment } from "../../store/comment";
 import { getTheLikes, setOneLike, unOneLike } from "../../store/likes";
+import './ImagePage.css'
 
 import EditFormPage from "../EditFormPage";
 import { useHistory } from "react-router-dom";
@@ -41,26 +42,27 @@ const ImagePage = (props) => {
     }
   };
 
-  const handleLike = (e) => {
-    e.preventDefault();
+  // const handleLike = (e) => {
+  //   e.preventDefault();
 
-    const image_id =
-      e.target.farthestViewportElement.className.baseVal.split(" ")[1];
+  //   const image_id =
+  //     e.target.farthestViewportElement.className.baseVal.split(" ")[1];
 
-    if (
-      keys.filter(
-        (key) =>
-          likes[key].image_id === +image_id && likes[key].user_id === userId
-      ).length
-    ) {
-      dispatch(unOneLike(image_id));
-    } else dispatch(setOneLike(image_id));
-  };
+  //   if (
+  //     keys.filter(
+  //       (key) =>
+  //         likes[key].image_id === +image_id && likes[key].user_id === userId
+  //     ).length
+  //   ) {
+  //     dispatch(unOneLike(image_id));
+  //   } else dispatch(setOneLike(image_id));
+  // };
 
   const newHandleLike = (event) => {
     event.preventDefault();
 
-    const image_id = event.target.className.baseVal.split(" ")[1];
+    console.log(event.target.className.match(/\d+/)[0])
+    const image_id = event.target.className.match(/\d+/)[0];
 
     dispatch(setOneLike(image_id));
   };
@@ -68,7 +70,7 @@ const ImagePage = (props) => {
   const handleUnlike = (event) => {
     event.preventDefault();
     const image_id =
-      event.target.farthestViewportElement.className.baseVal.split(" ")[1];
+    event.target.className.match(/\d+/)[0];
 
     dispatch(unOneLike(image_id));
   };
@@ -124,7 +126,7 @@ const ImagePage = (props) => {
             <p
               // srcSet={getUser(props.image.user_id)?.avatar}
               className="image-page-avatar"> Avatar</p>
-            {/* <p>{getUser(props.image.user_id)?.username}</p> */}
+            <p>{getUser(props.image.user_id)?.username}</p>
             {props.image.user_id === userId && (
               <p
                 className="image-options-icon"
