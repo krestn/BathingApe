@@ -52,7 +52,7 @@ const SelectImagePage = (props) => {
             if (res.ok) {
                 await res.json();
                 setImageLoading(false);
-                history.push("/posts")
+                history.push("/")
                     || dispatch(getImages()) && props.setTrigger(false);
 
             } else {
