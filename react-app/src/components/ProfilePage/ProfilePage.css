@@ -1,0 +1,114 @@
+.profile-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+.profile-avatar {
+  margin-right: 3rem;
+}
+.profile-follow-button {
+  width: 5rem;
+  cursor: pointer;
+}
+.profile-unfollow-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.profile-top-row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.profile-top-row > p {
+  padding-right: 1rem;
+}
+.profile-middle-row {
+  display: flex;
+  margin: 1rem 0rem;
+}
+.profile-bottom-row {
+  display: flex;
+  flex-direction: column;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.profile-image {
+  width: 285px;
+  height: 285px;
+  box-shadow: 0px 0px 4px rgba(75, 75, 75, 0.247);
+  mix-blend-mode: multiply;
+  object-fit: cover;
+}
+.image-wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.37);
+  background-blend-mode: multiply;
+  z-index: 100;
+  height: 285px;
+}
+.image-wrapper:hover .image-info {
+  display: flex;
+}
+.image-wrapper {
+  position: relative;
+}
+.image-info {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.info-container {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+
+}
+.profile-image-heart {
+  width: 32px;
+  color: white;
+  margin-right: .5rem;
+}
+.profile-image-comment {
+  width: 32px;
+  color: white;
+  margin-right: .5rem;
+}
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(156, 156, 156, 0.123);
+  padding-top: 2.5rem;
+
+}
+@media screen and (max-width: 800px) {
+  .image-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 525px) {
+  .image-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.image-container-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-middle-row > p > span {
+  font-weight: bold;
+}
+.followers {
+  margin: 0rem 1rem;
+}

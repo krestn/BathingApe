@@ -5,6 +5,7 @@ import { getComments } from "../../store/comment";
 import { followUser, getFollowers, getFollowings, addToFollowing } from "../../store/follow";
 import { getUserImages } from "../../store/image";
 import { getTheLikes } from "../../store/likes";
+import './SideBar.css'
 
 const SideBar = (props) => {
   const user = useSelector((state) => state.session.user);
@@ -49,9 +50,9 @@ const SideBar = (props) => {
         className="sidebar-header"
         onClick={() => history.push(`/users/${user.id}`)}
       >
-        <p 
-        // srcSet={user.avatar} className="sidebar-avatar" sx={{ width: 84, height: 84 }}
-        >Avatar</p>
+        <img src={user.avatar}
+        className='userAvatar'
+        ></img>
         <div className="sb-username-email">
           <p className="sidebar-username">{user.username}</p>
           <p className="sidebar-email">{user.email}</p>
@@ -62,15 +63,14 @@ const SideBar = (props) => {
         {usersToFollow?.slice(0, 8).map((userToFollow) => (
           <>
             {userToFollow.username !== user.username && (
-              <div id={`suggestion-${userToFollow.id}`}className="suggestion">
+              <div id={`suggestion-${userToFollow.id}`} className="suggestion">
                 <div
                   className="suggestion-link"
                   onClick={() => history.push(`/users/${userToFollow.id}`)}
                 >
                   <div className="suggestion-avatar">
-                    <p
-                    // srcSet={userToFollow.avatar}
-                     >Avatar</p>
+                  <img src={userToFollow.avatar}
+        className='userAvatar'></img>
                   </div>
                   <p className="suggestion-username">{userToFollow.username}</p>
                 </div>
@@ -79,6 +79,7 @@ const SideBar = (props) => {
                     className="suggestion-follow"
                     onClick={() => {
                       const utfId = +userToFollow.id;
+                      console.log(utfId)
 
                       followProfileUser(utfId);
                     }}

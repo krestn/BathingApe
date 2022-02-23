@@ -13,6 +13,7 @@ import { getTheLikes, setOneLike, unOneLike } from "../../store/likes";
 import EditFormPage from "../EditFormPage";
 import ImagePage from "../ImagePage";
 import NavBar from "../Navbar";
+import './imagesPage.css'
 
 
 function ImagesPage() {

@@ -10,6 +10,7 @@ import {
   unfollowUser,
 } from "../../store/follow";
 import { useParams } from "react-router-dom";
+import './ProfilePage.css'
 
 import NavBar from "../Navbar";
 

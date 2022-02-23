@@ -14,6 +14,7 @@ import EditFormPage from "../EditFormPage";
 import ImagePage from "../ImagePage";
 import NavBar from "../Navbar";
 import SideBar from "../SideBar";
+import './HomePage.css'
 
 function HomePage() {
   const userId = useSelector((state) => state.session.user.id);
@@ -121,6 +122,8 @@ function HomePage() {
     setShowOptions(false);
   };
 
+
+
   const postCommentForm = (image_id, submitFn, content, setContent) => {
     return (
       <form id="form-comment-con" className={image_id} onSubmit={submitFn}>
@@ -204,6 +207,9 @@ function HomePage() {
     const submitButton = document.querySelector(".comment-submit-button");
     if (e.target.value !== "") submitButton.style.opacity = ".9";
     else submitButton.style.opacity = ".4";
+
+    
+
   };
 
   return (
@@ -218,7 +224,10 @@ function HomePage() {
                   className="post-ava-name"
                   onClick={(event) => history.push(`/users/${image.user_id}`)}
                 >
-                  <p onClick={(event) => history.push(`/users/${image.user_id}`)}>Avatar</p>
+
+
+                  <img src={getUser(image.user_id)?.avatar }
+                  className='userAvatar' onClick={(event) => history.push(`/users/${image.user_id}`)}></img>
                   <li>{getUser(image.user_id)?.username}</li>
                 </div>
               </div>
@@ -259,16 +268,16 @@ function HomePage() {
                   onClick={handleLike}
                 ></div>
                 {checkIfLiked(image.id) ? (
-                  <p>Liked</p>
+                  <p className="post-footer-icon liked-icon" >Liked</p>
                 ) : (
-                  <p>Not Liked</p>
+                  <p className="post-footer-icon">Not Liked</p>
                 )}
                 <p
                   onClick={() => {
                     setImageButtonPopup(image.id);
                     body.style.overflow = "hidden";
                   }}
-                  className="post-footer-icon"> Chart
+                  className="post-footer-icon"> Chat
                 </p>
               </div>
               {getImageLikes(image.id).length > 0 && (
