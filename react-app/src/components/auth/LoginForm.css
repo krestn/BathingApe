@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+
 body{
   background-color: #93b7d5;
 }
@@ -229,12 +233,15 @@ color: white;}
   max-width: 100%;
   height: auto;
 }
+
+
 .caption {
-  font-size: 1.8rem;
+  font-size: 4.8rem;
   text-align: center;
   margin-top: 10%;
   line-height: 2em;
-  /* font-family: "Permanant Marker"; */
+  font-weight: bold;
+  font-family: 'Permanent Marker', cursive;
 }
 
 
@@ -310,7 +317,7 @@ color: white;}
   filter: grayscale(100%);
   position: absolute;
   left: 1%;
-  top: 0%;
+  top: 5%;
   
 }
 .item1 .polaroid:before {
@@ -409,7 +416,7 @@ color: white;}
   filter: grayscale(100%);
   position: absolute;
   right: 1%;
-  top: 0%;
+  top: 5%;
 
 }
 .item2 .polaroid:before {
