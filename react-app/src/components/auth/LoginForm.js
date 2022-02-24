@@ -149,7 +149,7 @@ const LoginForm = () => {
       </a>
 
 
-      <img className="soap" src={soap} alt="photo" />
+      {/* <img className="soap" src={soap} alt="photo" /> */}
       <img className="phone" src={phone} alt="photo" />
 
 

@@ -13,7 +13,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 97vh;  
+  height: 600px;  
   overflow: hidden;
 
 }
@@ -323,7 +323,10 @@ color: white;}
   /* filter: grayscale(100%); */
   position: absolute;
   left: 1%;
-  bottom: -4%;
+  bottom: 5%;
+   box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
   
 }
 .item1 .polaroid:before {
@@ -410,6 +413,9 @@ color: white;}
   width: auto;
   left: 65px;
   top: 0;
+  /* box-shadow: 
+  12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.3); */
   
 }
 
@@ -419,6 +425,7 @@ color: white;}
   width: auto;
   right: -155px;
   bottom: -50px;
+  
   
 }
 
@@ -440,6 +447,9 @@ color: white;}
   position: absolute;
   right: 1%;
   top: 1%;
+  box-shadow: 
+  12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 
 }
 .item2 .polaroid:before {
