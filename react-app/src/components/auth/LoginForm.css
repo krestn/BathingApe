@@ -385,7 +385,7 @@ color: white;}
 }
 .item1:hover {
   /* filter: none; */
-  /* transform: scale(1, 1) rotate(0deg) !important; */
+  transform: scale(1, 1) rotate(0deg) !important;
   transition: all 0.35s;
   cursor: pointer;
   /* z-index: 5; */
@@ -508,10 +508,10 @@ color: white;}
 }
 .item2:hover {
   filter: none;
-  /* transform: scale(1, 1) rotate(0deg) !important; */
+  transform: scale(1, 1) rotate(0deg) !important;
   transition: all 0.35s;
   cursor: pointer;
-  /* z-index: 5; */
+  z-index: 5;
 
 }
 .item2:hover .polaroid:before {
