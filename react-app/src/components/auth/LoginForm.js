@@ -3,6 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { login } from "../../store/session.js";
 import './LoginForm.css'
+import bape2 from '../../assets/bape2.jpg'
+import bape3 from '../../assets/bape3.jpg'
+import bape4 from '../../assets/bape4.jpg'
+import logo from '../../assets/bape.png'
+
+
+
+
+
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -57,7 +66,7 @@ const LoginForm = () => {
 
         <div className="login-right">
           <div className="login-title">
-            <img className="loginLogo" src="/images/bape.png" alt='Bathing Ape'></img>
+            <img className="loginLogo" src={logo} alt='Bathing Ape'></img>
             {/* <h1 className="loginLogo">Bathing Ape</h1> */}
           </div>
           <form className="login-form" onSubmit={onLogin}>
@@ -111,19 +120,19 @@ const LoginForm = () => {
       </div>
 
       <div class="item1">
-        <div class="polaroid"><img className="image" src="/images/bape2.jpg" alt="photo" />
+        <div class="polaroid"><img className="image" src={bape2} alt="photo" />
           <div class="caption">I Miss London</div>
         </div>
       </div>
 
       <div class="item">
-        <div class="polaroid"><img className="image" src="/images/bape3.jpg" alt="photo" />
+        <div class="polaroid"><img className="image" src={bape3} alt="photo" />
           <div class="caption">Love ballons</div>
         </div>
       </div>
 
       <div class="item2">
-        <div class="polaroid"><img className="image" src="/images/bape4.jpg" alt="photo" />
+        <div class="polaroid"><img className="image" src={bape4} alt="photo" />
           <div class="caption">Vintage life </div>
         </div>
       </div>
