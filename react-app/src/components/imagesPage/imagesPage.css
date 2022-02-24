@@ -83,9 +83,14 @@
 
 
 .post-footer-icon-container{
-  margin-top: -5%;
+  margin-top: -8%;
+  margin-bottom: 3%;
+  margin-left: 1%;
   background-color: #e4ebf5;
-  border-bottom: 5px solid #93b7d5;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  height: 45px;
 
 }
 .caption-container {
@@ -243,15 +248,19 @@
 
 .num-of-likes-div {
   display: flex;
-  margin-left: .5rem;
-  margin-bottom: 10px;
-  font-size: 14px;
+  /* margin-left: .5rem; */
+  /* margin-bottom: 10px; */
+  font-size: 13px;
+  height: 45px;
 }
 
 .num-of-likes-label {
   font-weight: bold;
-}
+  display: flex;
+
+ justify-content: center;
+align-items: center;}
+
 .likes-text {
   font-weight: bold;
-  margin-left: 5px;
 }

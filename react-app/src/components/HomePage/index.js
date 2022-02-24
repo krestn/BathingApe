@@ -16,6 +16,11 @@ import NavBar from "../Navbar";
 import SideBar from "../SideBar";
 import './HomePage.css'
 
+import full from '../../assets/heart.png'
+import empty from '../../assets/emptyHeart.png'
+
+
+
 function HomePage() {
   const userId = useSelector((state) => state.session.user.id);
   const history = useHistory();
@@ -269,9 +274,12 @@ function HomePage() {
                   onClick={handleLike}
                 ></div>
                 {checkIfLiked(image.id) ? (
-                  <p className="post-footer-icon liked-icon" >Liked</p>
+                  
+                  <img className="post-footer-icon"src={full} ></img>
                 ) : (
-                  <p className="post-footer-icon">Not Liked</p>
+                  <img className="post-footer-icon" src={empty}></img>
+
+                  
                 )}
                 {/* <p
                   onClick={() => {
@@ -280,15 +288,15 @@ function HomePage() {
                   }}
                   className="post-footer-icon"> Chat
                 </p> */}
-              </div>
               {getImageLikes(image.id).length > 0 && (
                 <div className="num-of-likes-div">
                   <label className="num-of-likes-label">
                     {getImageLikes(image.id).length}{" "}
                   </label>
-                  <p className="likes-text">{getImageLikes(image.id).length > 1 ? "likes" : "like"}</p>
+                  {/* <p className="likes-text">{getImageLikes(image.id).length > 1 ? "likes" : "like"}</p> */}
                 </div>
               )}
+              </div>
               <li className="caption-container">
                 <div
                   className="caption-username"

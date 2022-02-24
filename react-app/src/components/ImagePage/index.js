@@ -5,6 +5,12 @@ import { createComment } from "../../store/comment";
 import { getTheLikes, setOneLike, unOneLike } from "../../store/likes";
 import './ImagePage.css'
 
+import full from '../../assets/heart.png'
+import empty from '../../assets/emptyHeart.png'
+
+
+
+
 import EditFormPage from "../EditFormPage";
 import { useHistory } from "react-router-dom";
 
@@ -70,7 +76,7 @@ const ImagePage = (props) => {
   const handleUnlike = (event) => {
     event.preventDefault();
     const image_id =
-    event.target.className.match(/\d+/)[0];
+      event.target.className.match(/\d+/)[0];
 
     dispatch(unOneLike(image_id));
   };
@@ -221,13 +227,21 @@ const ImagePage = (props) => {
           <div className="image-page-footer">
             <div className="image-page-options-container">
               {checkIfLiked(props.image.id) ? (
-                <p
+
+
+
+
+                <img src={full}
                   className={`post-footer-icon ${props.image.id} liked-icon`}
-                  onClick={handleUnlike}>Liked</p>
+                  onClick={handleUnlike}></img>
               ) : (
-                <p
+                <img src={empty}
                   className={`post-footer-icon ${props.image.id}`}
-                  onClick={newHandleLike}>Not liked</p>
+                  onClick={newHandleLike}></img>
+
+
+
+
               )}
               {/* <p
                 className="image-page-options-icon"
