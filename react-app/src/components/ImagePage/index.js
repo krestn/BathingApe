@@ -229,7 +229,7 @@ const ImagePage = (props) => {
                   className={`post-footer-icon ${props.image.id}`}
                   onClick={newHandleLike}>Not liked</p>
               )}
-              <p
+              {/* <p
                 className="image-page-options-icon"
                 onClick={() => {
                   if (commentShowB === props.image.id) {
@@ -241,7 +241,7 @@ const ImagePage = (props) => {
                   setContentB("");
                   setEditB(false);
                 }}
-              >Chat</p>
+              >Chat</p> */}
             </div>
             {editB === false &&
               props.postCommentForm(

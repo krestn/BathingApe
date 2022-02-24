@@ -50,9 +50,11 @@ const SideBar = (props) => {
         className="sidebar-header"
         onClick={() => history.push(`/users/${user.id}`)}
       >
+        <div className="aviContainer">
         <img src={user.avatar}
         className='userAvatar'
         ></img>
+        </div>
         <div className="sb-username-email">
           <p className="sidebar-username">{user.username}</p>
           <p className="sidebar-email">{user.email}</p>
@@ -68,7 +70,7 @@ const SideBar = (props) => {
                   className="suggestion-link"
                   onClick={() => history.push(`/users/${userToFollow.id}`)}
                 >
-                  <div className="suggestion-avatar">
+        <div className="aviContainer">
                   <img src={userToFollow.avatar}
         className='userAvatar'></img>
                   </div>

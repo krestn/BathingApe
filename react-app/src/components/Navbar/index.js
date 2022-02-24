@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import './Navbar.css'
-
+import logo from '../../assets/bape.png'
 import SelectImagePage from "../SelectImagePage";
 import { useSelector } from "react-redux";
 
@@ -26,13 +26,10 @@ const NavBar = () => {
 
   return (
     <nav className="nav-bar">
-      <div className="nav-logo">
-        <NavLink to="/" id="site-title">
-          Bathing Ape
+      <div className="nav-title">
+        <NavLink to="/" class="site-title">
+          < img className="navLogo" src={logo} alt='Bathing Ape'></img>
         </NavLink>
-        <div className="bape">
-          <p>Bathing Ape</p>
-        </div>
       </div>
 
       <ul className="nav-bar-right">
@@ -62,7 +59,7 @@ const NavBar = () => {
             // srcSet={user.avatar}
             onClick={() => setUserDrop(!userDrop)}
             className="nav-icon"
-            sx={{ width: 28, height: 28 }}>Avatar</p>
+            >Avatar</p>
         </li>
         {userDrop && (
           <li className="user-dropdown">

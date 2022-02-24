@@ -46,6 +46,7 @@ function App() {
           <ImagesPage />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true}>
+          <NavBar/>
           <HomePage />
         </ProtectedRoute>
       </Switch>

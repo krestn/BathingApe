@@ -213,8 +213,7 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <NavBar />
+    <div className="scroll">
       <div className="posts-page-body">
         <ul className="post-container">
           {followedImages.map((image, i) => (
@@ -225,10 +224,12 @@ function HomePage() {
                   onClick={(event) => history.push(`/users/${image.user_id}`)}
                 >
 
+                  <div className="aviContainer">
 
                   <img src={getUser(image.user_id)?.avatar }
                   className='userAvatar' onClick={(event) => history.push(`/users/${image.user_id}`)}></img>
-                  <li>{getUser(image.user_id)?.username}</li>
+                  </div>
+                  <li className="userName">{getUser(image.user_id)?.username}</li>
                 </div>
               </div>
               <li>
@@ -272,13 +273,13 @@ function HomePage() {
                 ) : (
                   <p className="post-footer-icon">Not Liked</p>
                 )}
-                <p
+                {/* <p
                   onClick={() => {
                     setImageButtonPopup(image.id);
                     body.style.overflow = "hidden";
                   }}
                   className="post-footer-icon"> Chat
-                </p>
+                </p> */}
               </div>
               {getImageLikes(image.id).length > 0 && (
                 <div className="num-of-likes-div">
