@@ -7,6 +7,9 @@ import bape2 from '../../assets/bape2.jpg'
 import bape3 from '../../assets/bape3.jpg'
 import bape4 from '../../assets/bape4.jpg'
 import logo from '../../assets/bape.png'
+import soap from '../../assets/soap.png'
+import phone from '../../assets/iphone1.jpg'
+
 
 
 
@@ -118,14 +121,14 @@ const LoginForm = () => {
           Don't have an account? <NavLink className="signup" to="/sign-up">Sign Up</NavLink>
         </div>
       </div>
-      
+
       <a href="https://www.linkedin.com/in/krestoncaldwell/" target="_blank">
 
-      <div class="item1">
-        <div class="polaroid"><img className="image" src={bape2} alt="photo" />
-          <div class="caption">LinkedIn</div>
+        <div class="item1">
+          <div class="polaroid"><img className="image" src={bape2} alt="photo" />
+            <div class="caption">LinkedIn</div>
+          </div>
         </div>
-      </div>
       </a>
 
       {/* <div class="item">
@@ -135,15 +138,22 @@ const LoginForm = () => {
       </div> */}
 
 
-<a href="https://github.com/krestn" target="_blank">
+      <a href="https://github.com/krestn" target="_blank">
 
-      <div class="item2">
-        <div class="polaroid"><img className="image" src={bape4} alt="photo" />
-          <div class="caption">Github </div>
+        <div class="item2">
+          <div class="polaroid"><img className="image" src={bape4} alt="photo" />
+            <div class="caption">Github </div>
+          </div>
         </div>
-      </div>
 
-</a>
+      </a>
+
+
+      <img className="soap" src={soap} alt="photo" />
+      <img className="phone" src={phone} alt="photo" />
+
+
+
 
 
 
