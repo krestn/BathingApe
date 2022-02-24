@@ -310,6 +310,7 @@ color: white;}
   filter: grayscale(100%);
   position: absolute;
   left: 1%;
+  top: 0%;
   
 }
 .item1 .polaroid:before {
@@ -408,7 +409,7 @@ color: white;}
   filter: grayscale(100%);
   position: absolute;
   right: 1%;
-  bottom: 0%;
+  top: 0%;
 
 }
 .item2 .polaroid:before {

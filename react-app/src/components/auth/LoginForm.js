@@ -125,11 +125,11 @@ const LoginForm = () => {
         </div>
       </div>
 
-      <div class="item">
+      {/* <div class="item">
         <div class="polaroid"><img className="image" src={bape3} alt="photo" />
           <div class="caption">Love ballons</div>
         </div>
-      </div>
+      </div> */}
 
       <div class="item2">
         <div class="polaroid"><img className="image" src={bape4} alt="photo" />
