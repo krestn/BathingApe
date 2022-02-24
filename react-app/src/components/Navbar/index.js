@@ -55,11 +55,14 @@ const NavBar = () => {
           </NavLink>
         </li> */}
         <li>
-          <p
-            // srcSet={user.avatar}
-            onClick={() => setUserDrop(!userDrop)}
-            className="nav-icon"
-            >Avatar</p>
+
+
+        <div className="aviNav" onClick={() => setUserDrop(!userDrop)}
+>
+          <img src={user.avatar}
+            className='userAvatar'
+          ></img>
+        </div>
         </li>
         {userDrop && (
           <li className="user-dropdown">
