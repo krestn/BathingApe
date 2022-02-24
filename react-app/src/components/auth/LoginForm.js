@@ -118,12 +118,15 @@ const LoginForm = () => {
           Don't have an account? <NavLink className="signup" to="/sign-up">Sign Up</NavLink>
         </div>
       </div>
+      
+      <a href="https://www.linkedin.com/in/krestoncaldwell/" target="_blank">
 
       <div class="item1">
         <div class="polaroid"><img className="image" src={bape2} alt="photo" />
           <div class="caption">LinkedIn</div>
         </div>
       </div>
+      </a>
 
       {/* <div class="item">
         <div class="polaroid"><img className="image" src={bape3} alt="photo" />
@@ -131,11 +134,18 @@ const LoginForm = () => {
         </div>
       </div> */}
 
+
+<a href="https://github.com/krestn" target="_blank">
+
       <div class="item2">
         <div class="polaroid"><img className="image" src={bape4} alt="photo" />
           <div class="caption">Github </div>
         </div>
       </div>
+
+</a>
+
+
 
     </div>
   );
