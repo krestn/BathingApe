@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { login } from "../../store/session.js";
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -43,52 +44,90 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="login-body">
-      <div className="login-left">
-      </div>
-      <div className="login-right">
-        <h1 className="login-title">Bathing Ape</h1>
-        <form className="login-form" onSubmit={onLogin}>
-          <div>
-            {errors.map((error, ind) => (
-              <div className="display-errors" key={ind}>
-                * {error}
-              </div>
-            ))}
+
+
+    <div className="loginPage">
+
+
+
+
+
+
+      <div className="login-body">
+
+        <div className="login-right">
+          <div className="login-title">
+            <img className="loginLogo" src="/images/bape.png" alt='Bathing Ape'></img>
+            {/* <h1 className="loginLogo">Bathing Ape</h1> */}
           </div>
-          <div className="input-wrapper">
-            <input
-              className="login-input"
-              name="email"
-              type="text"
-              required={true}
-              value={email}
-              onChange={updateEmail}
-            />
-            <label className="login-label">Email</label>
-          </div>
-          <div className="input-wrapper">
-            <input
-              className="login-input"
-              name="password"
-              type="password"
-              required={true}
-              value={password}
-              onChange={updatePassword}
-            />
-            <label className="login-label">Password</label>
-          </div>
-          <button type="submit" className="login-button">
-            Login
-          </button>
-          <button className="demo-login-button" onClick={demoLogin}>
-            Demo
-          </button>
-        </form>
-        <div className="login-signup-con">
-          Don't have an account? <NavLink to="/sign-up">Sign Up</NavLink>
+          <form className="login-form" onSubmit={onLogin}>
+            <div>
+              {errors.map((error, ind) => (
+                <div className="display-errors" key={ind}>
+                  * {error}
+                </div>
+              ))}
+            </div>
+            <div className="input-wrapper">
+              <input
+                className="login-input"
+                placeholder="Email"
+
+                name="email"
+                type="text"
+                required={true}
+                value={email}
+                onChange={updateEmail}
+              />
+              <label className="login-label"></label>
+            </div>
+            <div className="input-wrapper">
+              <input
+                className="login-input"
+                name="password"
+                type="password"
+                placeholder="Password"
+
+                required={true}
+                value={password}
+                onChange={updatePassword}
+              />
+              <label className="login-label"></label>
+            </div>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            <button className="demo-login-button" onClick={demoLogin}>
+              Demo
+            </button>
+          </form>
         </div>
       </div>
+      <div className="signupDiv">
+
+        <div className="login-signup-con">
+          Don't have an account? <NavLink className="signup" to="/sign-up">Sign Up</NavLink>
+        </div>
+      </div>
+
+      <div class="item1">
+        <div class="polaroid"><img className="image" src="/images/bape2.jpg" alt="photo" />
+          <div class="caption">I Miss London</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="polaroid"><img className="image" src="/images/bape3.jpg" alt="photo" />
+          <div class="caption">Love ballons</div>
+        </div>
+      </div>
+
+      <div class="item2">
+        <div class="polaroid"><img className="image" src="/images/bape4.jpg" alt="photo" />
+          <div class="caption">Vintage life </div>
+        </div>
+      </div>
+
     </div>
   );
 };
