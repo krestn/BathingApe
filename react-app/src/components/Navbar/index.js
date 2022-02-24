@@ -66,7 +66,7 @@ const NavBar = () => {
         </li>
         {userDrop && (
           <li className="user-dropdown">
-            <div className="user-info">
+            {/* <div className="user-info">
               {user && (
                 <>
                   <p
@@ -79,7 +79,7 @@ const NavBar = () => {
                   </div>
                 </>
               )}
-            </div>
+            </div> */}
             <LogoutButton />
           </li>
         )}
