@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserImages } from "../../store/image";
 import { getTheLikes } from "../../store/likes";
 import { getComments } from "../../store/comment";
+import { getImages, deleteOneImage } from "../../store/image";
+import full from '../../assets/heart.png'
+
+
 import {
   getFollowers,
   getFollowings,
@@ -12,9 +16,15 @@ import {
 import { useParams } from "react-router-dom";
 import './ProfilePage.css'
 
+
 import NavBar from "../Navbar";
 
 const ProfilePage = (props) => {
+  const [editButtonPopup, setEditButtonPopup] = useState(0);
+
+  const [showOptions, setShowOptions] = useState(false);
+
+
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const images = useSelector((state) => state.images);
@@ -32,6 +42,16 @@ const ProfilePage = (props) => {
   );
   const followingsArr = Object.values(followings || {});
   const followersArr = Object.values(followers || {});
+
+  const handleEdit = (imageId) => {
+    setEditButtonPopup(imageId);
+    setShowOptions(false);
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(deleteOneImage(images[e.target.className.split(" ")[0]]));
+  };
 
   useEffect(() => {
     dispatch(getUserImages(profileId));
@@ -70,8 +90,8 @@ const ProfilePage = (props) => {
       <header className="profile-header-container">
         <div className="profile-avatar">
           <p
-          //  srcSet={getUser(profileId)?.avatar} 
-           sx={{ width: 150, height: 150 }}>Avatar</p>
+            //  srcSet={getUser(profileId)?.avatar} 
+            sx={{ width: 150, height: 150 }}>Avatar</p>
         </div>
         <div className="column">
           <div className="profile-top-row">
@@ -85,7 +105,7 @@ const ProfilePage = (props) => {
                     className="profile-follow-button"
                     onClick={(event) => followProfileUser(profileId)}
                   >
-                    <p width={18}>Add User</p> 
+                    <p width={18}>Add User</p>
                   </button>
                 ) : (
                   <button
@@ -125,17 +145,31 @@ const ProfilePage = (props) => {
             <div className="image-wrapper">
               <img
                 className="profile-image"
+                onClick={() => setShowOptions(!showOptions)}
+
                 src={image.url}
                 alt="user_upload"
               ></img>
+              {showOptions && (
+                <div className="post-options">
+                  <button
+                    className={`${image.id} post-option-delete`}
+                    onClick={handleDelete}
+                  >
+                    Delete
+                  </button>
+                  <button onClick={() => handleEdit(image.id)}>Edit</button>
+                  <button onClick={() => setShowOptions(false)}>
+                    Cancel
+                  </button>
+                </div>)}
               <div className="image-info">
                 <p className="info-container">
-                  <p className="profile-image-heart">Heart</p>
+                  <img src={full} className="profile-image-heart"></img>
                   {getLikes(image.id)}
                 </p>
                 <p className="info-container">
-                  <p className="profile-image-comment"> Chat </p>
-                  {checkComments(image.id)}
+                  <p className="profile-image-comment">{`... ${checkComments(image.id)}`}</p>
                 </p>
               </div>
             </div>
