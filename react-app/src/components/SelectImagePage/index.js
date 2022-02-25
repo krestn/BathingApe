@@ -69,8 +69,8 @@ const SelectImagePage = (props) => {
             onClick={e => e.target.className === "select-image-page-body" && props.setTrigger(false)}>
             <div className="modal-container">
                 <div className="new-post-text">
-                    <p>Create A New Post</p>
-                    <p
+                    <p className="createPostTitle">Create A New Post</p>
+                    <p 
                         className="X"
                         onClick={e => props.setTrigger(false)}
                     >X</p>
@@ -89,11 +89,12 @@ const SelectImagePage = (props) => {
                         onClick={e => e.target.style.color = "black"}
                     />
                     <div className="upload">
-                        <label>Caption</label>
+                        <label></label>
                         <input
                             type="text"
                             name="caption"
                             className="caption-input"
+                            placeholder="Caption"
                             onChange={updateCaption}
                             value={caption}
                         ></input>

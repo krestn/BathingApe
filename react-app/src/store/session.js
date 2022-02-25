@@ -70,17 +70,20 @@ export const logout = () => async (dispatch) => {
 };
 
 
-export const signUp = (username, email, password, image) => async (dispatch) => {
-  const formData = new FormData();
-  formData.append("username", username)
-  formData.append("email", email)
-  formData.append("password", password)
-  formData.append("image", image);
+export const signUp = (username, email, password, repeat_password, image) => async (dispatch) => {
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
-    body: formData,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+      repeat_password,
+      image
+    }),
   });
-
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -88,7 +91,7 @@ export const signUp = (username, email, password, image) => async (dispatch) => 
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
-      return data.errors;
+      return data;
     }
   } else {
     return ['An error occurred. Please try again.']

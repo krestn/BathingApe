@@ -135,7 +135,6 @@ const ProfilePage = (props) => {
           </div>
           <div className="profile-bottom-row">
             <h4>{getUser(profileId)?.email}</h4>
-            <p>Description coming soon...</p>
           </div>
         </div>
       </header>

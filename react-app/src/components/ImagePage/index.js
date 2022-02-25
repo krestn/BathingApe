@@ -155,7 +155,7 @@ const ImagePage = (props) => {
                 if (comment.image_id === props.image.id) {
                   return (
                     <div
-                      className={`ind-comment-${comment.id}`}
+                      className='ind-comment'
                       id="ind-comment"
                     >
                       <div className="image-page-comment-header">
@@ -173,8 +173,8 @@ const ImagePage = (props) => {
                             {getUser(comment.user_id)?.username}
                           </p>
                         </div>
-                        <div className="commentPDiv">
-                          <p className={props.canEditComment(comment)}>
+                        <div className="commentDiv">
+                          <p className='imgCom'>
                             {comment.content}
                           </p>
                         </div>

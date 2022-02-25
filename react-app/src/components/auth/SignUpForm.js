@@ -16,17 +16,37 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
 
-    const errArr = [];
-    username || errArr.push("* Please enter a username.");
-    email || errArr.push("* Please enter an email.");
-    password || errArr.push("* Please enter a password.");
-    repeatPassword === password || errArr.push("* Passwords do not match.");
-    if (errArr.length) {
-      setErrors(errArr);
-    } else {
-      await dispatch(signUp(username, email, password, image));
-    }
+    setErrors([])
+    return dispatch(signUp(username, email, password, repeatPassword))
+      .then((response) => {
+        if (response?.errors) {
+          setErrors(response.errors);
+          response.errors.forEach((ele) => {
+            console.log("ele", ele);
+            if (ele.includes("Username")) setUsername("");
+            if (ele.includes("address")) setEmail("");
+          });
+          setPassword("");
+          setRepeatPassword("");
+          errors.forEach((ele) => {
+            console.log("ele", ele);
+            if (ele.includes("Username")) setUsername("");
+            if (ele.includes("address")) setEmail("");
+          });
+          return
+        }
+        else if (!response?.errors) return;
+      })
   };
+
+
+
+
+
+
+
+
+
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
@@ -60,14 +80,12 @@ const SignUpForm = () => {
       <div className="sign-up-right">
         <h1 id="sign-up-title">Bathing Ape</h1>
         <form className="sign-up-form" onSubmit={onSignUp}>
-          <ul>
-            {errors.length > 0 &&
-              errors.map((err) => (
-                <li className="display-errors" key={err}>
-                  {err}
-                </li>
-              ))}
-          </ul>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind} className="errors">{error}</div>
+            ))}
+            {console.log(errors)}
+          </div>
           <div className="input-wrapper">
             <input
               type="text"
