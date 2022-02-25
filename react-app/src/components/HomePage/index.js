@@ -237,7 +237,7 @@ function HomePage() {
                   <li className="userName">{getUser(image.user_id)?.username}</li>
                 </div>
               </div>
-              <li>
+              <li className="postPhoto">
                 <img
                   className="post-image"
                   src={`${image.url}`}
@@ -267,10 +267,9 @@ function HomePage() {
                   setEditB={setEditB}
                   handleDelete={handleDelete}
                 />
-              </li>
               <div className="post-footer-icon-container">
                 <div
-                  className={`like-div ${image.id}`}
+                  className={`like-div ${image.id} liked-icon`}
                   onClick={handleLike}
                 ></div>
                 {checkIfLiked(image.id) ? (
@@ -296,15 +295,16 @@ function HomePage() {
                   {/* <p className="likes-text">{getImageLikes(image.id).length > 1 ? "likes" : "like"}</p> */}
                 </div>
               )}
-              </div>
               <li className="caption-container">
                 <div
                   className="caption-username"
                   onClick={() => history.push(`/users/${image.user_id}`)}
                 >
-                  {getUser(image.user_id)?.username}
+                  {/* {getUser(image.user_id)?.username} */}
                 </div>
                 <div className="caption">{image.caption}</div>
+              </li>
+              </div>
               </li>
               {getImageComments(image.id)?.map((comment) => {
                 if (comment.image_id === image.id) {

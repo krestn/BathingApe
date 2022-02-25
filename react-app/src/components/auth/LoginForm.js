@@ -126,7 +126,7 @@ const LoginForm = () => {
 
         <div class="item1">
           <div class="polaroid"><img className="image" src={bape2} alt="photo" />
-            <div class="caption">LinkedIn</div>
+            <div class="links">LinkedIn</div>
           </div>
         </div>
       </a>
@@ -142,7 +142,7 @@ const LoginForm = () => {
 
         <div class="item2">
           <div class="polaroid"><img className="image" src={bape4} alt="photo" />
-            <div class="caption">Github </div>
+            <div class="links">Github </div>
           </div>
         </div>
 

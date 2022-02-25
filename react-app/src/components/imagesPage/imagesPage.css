@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
 .posts-page-body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -39,9 +43,22 @@
 
 .post-image {
   cursor: pointer;
-  width: 100%;
-  z-index: -1;
+  width: 80%;
+  padding-right: 20px;
+  padding-top: 20px;
+
+  padding-left: 20px;
+
   background-color: white;
+  border: solid white;
+
+}
+
+.postPhoto{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 /* .ind-post-container{
@@ -78,27 +95,30 @@
 .post-footer-icon {
   margin: .5rem .25rem;
   width: 30px;
+  max-height: 30px;
   cursor: pointer;
 }
 
 
 .post-footer-icon-container{
-  margin-top: -8%;
+  align-self: center;
   margin-bottom: 3%;
-  margin-left: 1%;
-  background-color: #e4ebf5;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 80.5%;
+  background-color: white;
   display: flex;
   flex-direction: row;
   align-content: center;
-  height: 45px;
+  justify-content: flex-start;
+  height: 100px;
 
 }
 .caption-container {
   display: flex;
-  flex-direction: row;
-  padding: 0rem .5rem .5rem .5rem;
-  background-color: #e4ebf5;
-  border-bottom: 5px solid #93b7d5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .caption-username {
   font-weight: bold;
@@ -109,6 +129,7 @@
 .caption {
   font-size: 20px;
   cursor: default;
+  font-family: 'Permanent Marker', cursive;
 }
 .posts-view-comments {
   padding-left: .5rem;

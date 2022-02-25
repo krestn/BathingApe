@@ -123,12 +123,13 @@ function ImagesPage() {
         placeholder="Comment"
         value={content}
         onChange={(e) => {
-            setContent(e.target.value);
+          setContent(e.target.value);
         }}
       />
       <button className="comment-submit-button">Post</button>
     </form>
-  )}
+    )
+  }
 
   const editCommentForm = (image_id, commentId, editFn, content, setContent) => (
     <form
@@ -160,16 +161,16 @@ function ImagesPage() {
 
   const commentFunction = (e) => {
     const submitButton = document.querySelector(".comment-submit-button")
-    if(e.target.value !== "") submitButton.style.opacity = ".9"
+    if (e.target.value !== "") submitButton.style.opacity = ".9"
     else submitButton.style.opacity = ".4"
   }
 
   const getImageComments = image_id => {
     const comments = [];
     let counter = 0;
-    for(let i = commentsArray.length - 1; i >= 0; i--) {
+    for (let i = commentsArray.length - 1; i >= 0; i--) {
       const comment = commentsArray[i];
-      if(comment.image_id === image_id && counter < 3) {
+      if (comment.image_id === image_id && counter < 3) {
         comments.unshift(comment);
         counter++;
       }
@@ -179,9 +180,9 @@ function ImagesPage() {
 
   const getImageLikes = image_id => {
     const likesOnImage = [];
-    for(let i = 0; i < likesArr.length; i++) {
+    for (let i = 0; i < likesArr.length; i++) {
       const like = likesArr[i];
-      if(+like.image_id === +image_id) likesOnImage.push(like);
+      if (+like.image_id === +image_id) likesOnImage.push(like);
     }
     return likesOnImage;
   }
@@ -198,13 +199,13 @@ function ImagesPage() {
                   className="post-ava-name"
                   onClick={(event) => history.push(`/users/${image.user_id}`)}
                 >
-                  <p className="post-avatar" 
+                  <p className="post-avatar"
                   // srcSet={getUser(image.user_id)?.avatar}
                   >Avatar</p>
                   <li>{getUser(image.user_id)?.username}</li>
                 </div>
               </div>
-              <li>
+              <li >
                 <img
                   className="post-image"
                   src={`${image.url}`}
@@ -237,7 +238,7 @@ function ImagesPage() {
               </li>
               <div className="post-footer-icon-container">
                 <div
-                  className={`like-div ${image.id}`}
+                  className={`like-div ${image.id} liked-icon`}
                   onClick={handleLike}
                 ></div>
                 {checkIfLiked(image.id) ? (
@@ -290,7 +291,7 @@ function ImagesPage() {
                 }
                 return "";
               })}
-              {commentsArray.filter(comment => image.id === comment.image_id).length > 3 &&(
+              {commentsArray.filter(comment => image.id === comment.image_id).length > 3 && (
                 <p
                   className="posts-view-comments"
                   onClick={() => {
@@ -330,7 +331,7 @@ function ImagesPage() {
                   <p
                     onClick={() => setShowOptions(!showOptions)}
                     className="post-options-icon"> ... </p>
-                  
+
                   <EditFormPage
                     trigger={editButtonPopup}
                     setTrigger={setEditButtonPopup}
