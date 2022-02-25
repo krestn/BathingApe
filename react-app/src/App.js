@@ -36,19 +36,22 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/users" exact={true}>
+        {/* <ProtectedRoute path="/users" exact={true}>
           <UsersList />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path="/users/:userId" exact={true}>
           <ProfilePage />
         </ProtectedRoute>
-        <ProtectedRoute path="/posts" exact={true}>
+        {/* <ProtectedRoute path="/posts" exact={true}>
           <ImagesPage />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path="/" exact={true}>
           <NavBar/>
           <HomePage />
         </ProtectedRoute>
+        <Route>
+          PageNotFound
+        </Route>
       </Switch>
     </BrowserRouter>
   );
