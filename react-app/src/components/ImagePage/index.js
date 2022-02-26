@@ -158,8 +158,10 @@ const ImagePage = (props) => {
                       className='ind-comment'
                       id="ind-comment"
                     >
-                      <div className="image-page-comment-header">
-                        <div
+                      {/* <div className="image-page-comment-header"> */}
+
+
+                        {/* <div
                           className="image-page-ava-un"
                           onClick={() => {
                             history.push(`/users/${comment.user_id}`);
@@ -172,19 +174,25 @@ const ImagePage = (props) => {
                           <p className="image-page-comment-username">
                             {getUser(comment.user_id)?.username}
                           </p>
-                        </div>
-                        <div className="commentDiv">
+                        </div> */}
+
+
+
+
+
+
+                        {/* <div className="commentDiv"> */}
                           <p className='imgCom'>
                             {comment.content}
                           </p>
-                        </div>
+                        {/* </div> */}
                         {comment.user_id === userId && (
                           <p
                             className="ind-comment-option-toggle"
                             id={`comment-options-${comment.id}`}
                             onClick={() => setShowEditDelete(comment.id)}> ... </p>
                         )}
-                      </div>
+                      {/* </div> */}
                       {showEditDelete === comment.id &&
                         userId === comment.user_id && (
                           <div className="image-post-options">
