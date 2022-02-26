@@ -3,7 +3,7 @@
 
 
 body{
-  background-color: #e4ebf5
+  background-color: #e4ebf5;
   /* overflow: hidden; */
 
 }
@@ -249,6 +249,9 @@ color: white;}
   color: #551a8b;
 }
 
+.createPostTitle{
+
+}
 
 
 

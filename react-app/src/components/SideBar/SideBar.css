@@ -12,7 +12,7 @@
 .sidebar-header {
   display: flex;
   align-items: center;
-
+  min-width: 400px;
   background-color: #93b7d5;
   border-radius: 20px;
   padding: 20px;

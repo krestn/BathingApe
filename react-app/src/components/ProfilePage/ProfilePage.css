@@ -27,6 +27,9 @@
 .profile-middle-row {
   display: flex;
   margin: 1rem 0rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .profile-bottom-row {
   display: flex;
