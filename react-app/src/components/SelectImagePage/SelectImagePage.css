@@ -68,8 +68,13 @@ ul {
   list-style-type: none;
 }
 
+.errorsDiv{
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
 .display-errors {
-  color: rgb(255, 0, 179);
+  color: red;
   font-size: 1.5rem;
 }
 

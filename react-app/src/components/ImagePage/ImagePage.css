@@ -57,7 +57,7 @@
 }  */
 
 .imgCom {
-  inline-size: 320px;
+  inline-size: 220px;
   overflow-wrap: break-word;
 }
 
@@ -150,13 +150,17 @@
 
 }
 .image-page-comment-username {
-  font-size: .9rem;
+  font-size: 16px;
   font-weight: bold;
+  margin: 16px;
   margin-left: 5px;
   padding-left: 0.5rem;
 }
 .image-page-comment-avatar {
   width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  margin-left: 5px;
 }
 .image-page-comment-header > p {
   font-size: 0.925rem;
@@ -208,6 +212,8 @@
 }
 .image-page-caption-avatar {
   width: 40px;
+  height: 40px;
+  border: none;
 }
 .image-page-user-caption-con {
   display: flex;
@@ -217,6 +223,14 @@
 
 
 .image-page-caption {
+  font-weight: bold;
+  background-color: #93b7d5;
+  color: white;
+  max-width: 98%;
+  min-width: 98%;
+  text-align: center;
+  word-break: break-word; 
+
 
     margin-left: .5rem;
     cursor: default;
@@ -224,8 +238,8 @@
 
 .image-page-ava-un {
   display: flex;
-  cursor: pointer;
   align-items: center;
+  justify-content: center;
   justify-content: flex-start;
   margin-right: .5rem;
 }

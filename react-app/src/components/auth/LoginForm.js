@@ -73,7 +73,7 @@ const LoginForm = () => {
             {/* <h1 className="loginLogo">Bathing Ape</h1> */}
           </div>
           <form className="login-form" onSubmit={onLogin}>
-            <div>
+            <div className="errorsDiv">
               {errors.map((error, ind) => (
                 <div className="display-errors" key={ind}>
                   * {error}

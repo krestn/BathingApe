@@ -142,13 +142,13 @@ const ImagePage = (props) => {
           {props.commentsArray && (
             <div className="image-page-comment-container">
               <div className="image-page-user-caption-con">
-                <p
-                  // srcSet={getUser(props.image.user_id)?.avatar}
-                  className="image-page-caption-avatar"> Avatar</p>
+                {/* <img
+                  src={getUser(props.image.user_id).avatar}
+                  className="image-page-caption-avatar"></img> */}
 
-                <div className="image-page-username">
+                {/* <div className="image-page-username">
                   {getUser(props.image.user_id)?.username}
-                </div>
+                </div> */}
                 <div className="image-page-caption">{props.image.caption}</div>
               </div>
               {props.commentsArray?.map((comment) => {
@@ -161,20 +161,20 @@ const ImagePage = (props) => {
                       {/* <div className="image-page-comment-header"> */}
 
 
-                        {/* <div
+                        <div
                           className="image-page-ava-un"
                           onClick={() => {
                             history.push(`/users/${comment.user_id}`);
                             document.body.style.overflow = "visible";
                           }}
                         >
-                          <p
-                            // srcSet={getUser(comment.user_id)?.avatar}
-                            className="image-page-comment-avatar">Avatar</p>
+                          <img
+                            src={getUser(comment.user_id).avatar}
+                            className="image-page-comment-avatar"></img>
                           <p className="image-page-comment-username">
                             {getUser(comment.user_id)?.username}
                           </p>
-                        </div> */}
+                        </div>
 
 
 
@@ -196,7 +196,7 @@ const ImagePage = (props) => {
                       {showEditDelete === comment.id &&
                         userId === comment.user_id && (
                           <div className="image-post-options">
-                            {/* <button
+                            <button
                               onClick={(e) => {
                                 props.onDeleteComment(
                                   props.image.id,
@@ -206,7 +206,7 @@ const ImagePage = (props) => {
                               }}
                             >
                               Delete
-                            </button> */}
+                            </button>
                             <button
                               onClick={() => {
                                 setEditB(true);
