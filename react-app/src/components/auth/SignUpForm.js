@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import { signUp } from "../../store/session.js";
+import logo from '../../assets/bape.png'
+
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -74,12 +76,12 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="sign-up-body">
-      <div className="sign-up-left">
-      </div>
-      <div className="sign-up-right">
-        <h1 id="sign-up-title">Bathing Ape</h1>
-        <form className="sign-up-form" onSubmit={onSignUp}>
+    <div className="signup-body">
+      <div className="login-title">
+            <img className="loginLogo" src={logo} alt='Bathing Ape'></img>
+            {/* <h1 className="loginLogo">Bathing Ape</h1> */}
+          </div>
+        <form className="login-form" onSubmit={onSignUp}>
           <div>
             {errors.map((error, ind) => (
               <div key={ind} className="errors">{error}</div>
@@ -89,23 +91,26 @@ const SignUpForm = () => {
           <div className="input-wrapper">
             <input
               type="text"
-              className="signup-input"
+              className="login-input"
               name="username"
               onChange={updateUsername}
               value={username}
               required={true}
+              placeholder='Username'
             ></input>
-            <label className="signup-label">Username</label>
+            {/* <label className="signup-label">Username</label> */}
           </div>
           <div className="input-wrapper">
             <input
+            className="login-input"
               type="text"
               name="email"
               onChange={updateEmail}
               value={email}
               required={true}
+              placeholder='Email'
             ></input>
-            <label className="signup-label">Email</label>
+            {/* <label className="signup-label">Email</label> */}
           </div>
           <div className="input-wrapper">
             <input
@@ -113,42 +118,42 @@ const SignUpForm = () => {
               name="password"
               onChange={updatePassword}
               value={password}
+              className="login-input"
               required={true}
+              placeholder='Password'
             ></input>
-            <label className="signup-label">Password</label>
+            {/* <label className="signup-label">Password</label> */}
           </div>
           <div className="input-wrapper">
             <input
+              className="login-input"
+
               type="password"
               name="repeat_password"
               onChange={updateRepeatPassword}
               value={repeatPassword}
               required={true}
+              placeholder='Confirm password'
             ></input>
-            <label className="signup-label">Confirm Password</label>
+            {/* <label className="signup-label">Confirm Password</label> */}
           </div>
-          <label for="file-upload" className="file-input-con">
             <div className="avatar-upload-con">
-              <div className="file-button-con">
-                <p>Upload File...</p>
-              </div>
-              <p
-              // src={image && URL.createObjectURL(image)}
-              >Avatar</p>
-            </div>
-          </label>
-          <input
-            type="file"
-            onChange={updateImage}
-            id="file-upload"
-            className="hide-upload-button"
+                <p className="upP">Upload Profile Picture...</p>
+
+
+                <input
+                  type="file"
+                  onChange={updateImage}
+                  id="file-upload"
+                  className="hide-upload-button"
           />
-          <button type="submit">Sign Up</button>
+             
+            </div>
+          <button type="submit" className="login-button">Sign Up</button>
         </form>
         <div className="sign-up-login-con">
-          Have an account? <NavLink to="/login">Login</NavLink>
+          Have an account? <NavLink to="/login" className='signup'>Login</NavLink>
         </div>
-      </div>
     </div>
   );
 };
