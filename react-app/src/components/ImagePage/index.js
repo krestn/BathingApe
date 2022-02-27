@@ -129,9 +129,9 @@ const ImagePage = (props) => {
         </div>
         <div className="image-page-right">
           <div className="image-page-header">
-            <p
-              // srcSet={getUser(props.image.user_id)?.avatar}
-              className="image-page-avatar"> Avatar</p>
+            <img
+              src={getUser(props.image.user_id).avatar}
+              className="image-page-avatar"></img>
             <p>{getUser(props.image.user_id)?.username}</p>
             {props.image.user_id === userId && (
               <p

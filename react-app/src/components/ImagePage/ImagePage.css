@@ -38,7 +38,10 @@
 
   .image-page-comment-container {
     height: 243px;
+    
     max-width: 500px;
+    overflow-y: scroll;
+
   }
   .image-page-left {
     width: 100%;
@@ -54,7 +57,7 @@
 }  */
 
 .imgCom {
-  inline-size: 550px;
+  inline-size: 320px;
   overflow-wrap: break-word;
 }
 
@@ -135,7 +138,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   /* position: relative; */
 }
@@ -265,9 +268,5 @@
   color: rgb(255, 71, 71);
 }
 .ind-comment-option-toggle {
-  width: 24px;
-  position: absolute;
-  right: 0;
-  cursor: pointer;
-  z-index: 1;
+  margin-left: 40px;
 }
