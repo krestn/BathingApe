@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getImages } from "../../store/image";
 import './SelectImagePage.css'
@@ -7,6 +7,8 @@ import './SelectImagePage.css'
 const SelectImagePage = (props) => {
 
     const dispatch = useDispatch();
+    const user = useSelector((state) => state.session.user);
+
 
     const [errors, setErrors] = useState([]);
     const [caption, setCaption] = useState("");
@@ -52,7 +54,7 @@ const SelectImagePage = (props) => {
             if (res.ok) {
                 await res.json();
                 setImageLoading(false);
-                history.push("/")
+                history.push(`/users/${user.id}`)
                     || dispatch(getImages()) && props.setTrigger(false);
 
             } else {
@@ -70,7 +72,7 @@ const SelectImagePage = (props) => {
             <div className="modal-container">
                 <div className="new-post-text">
                     <p className="createPostTitle">Create A New Post</p>
-                    <p 
+                    <p
                         className="X"
                         onClick={e => props.setTrigger(false)}
                     >X</p>
@@ -96,7 +98,7 @@ const SelectImagePage = (props) => {
                             className="caption-input"
                             placeholder="Caption"
                             onChange={updateCaption}
-                            value={caption}
+                            // value={caption}
                         ></input>
                     </div>
                     <button className="submit-button" type="submit">Submit Post</button>

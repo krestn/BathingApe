@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import EditFormPage from "../EditFormPage";
+
 import { getUserImages } from "../../store/image";
 import { getTheLikes } from "../../store/likes";
 import { getComments } from "../../store/comment";
@@ -23,6 +25,8 @@ const ProfilePage = (props) => {
   const [editButtonPopup, setEditButtonPopup] = useState(0);
 
   const [showOptions, setShowOptions] = useState(false);
+  const userId = useSelector((state) => state.session.user.id);
+
 
 
   const user = useSelector((state) => state.session.user);
@@ -36,6 +40,7 @@ const ProfilePage = (props) => {
   const followers = useSelector((state) => state.follows.followers);
   const { userId: profileId } = useParams();
   const [users, setUsers] = useState([]);
+  const [imageURL, setImageURL] = useState('');
 
   const userImages = Object.values(images).filter(
     (image) => image.user_id === +profileId
@@ -142,35 +147,55 @@ const ProfilePage = (props) => {
         <div className="image-container">
           {userImages.map((image) => (
             <div className="image-wrapper">
+              <div>
+                {image.caption}
+              </div>
+              <EditFormPage
+                    trigger={editButtonPopup}
+                    setTrigger={setEditButtonPopup}
+                    image={image}
+                  />
               <img
                 className="profile-image"
-                onClick={() => setShowOptions(!showOptions)}
+                onClick={(e) => {setShowOptions(!showOptions); setImageURL(e.target.src)}}
 
                 src={image.url}
                 alt="user_upload"
-              ></img>
-              {showOptions && (
-                <div className="post-options">
-                  <button
-                    className={`${image.id} post-option-delete`}
-                    onClick={handleDelete}
-                  >
-                    Delete
-                  </button>
-                  <button onClick={() => handleEdit(image.id)}>Edit</button>
-                  <button onClick={() => setShowOptions(false)}>
-                    Cancel
-                  </button>
-                </div>)}
-              <div className="image-info">
-                <p className="info-container">
-                  <img src={full} className="profile-image-heart"></img>
-                  {getLikes(image.id)}
-                </p>
-                <p className="info-container">
-                  <p className="profile-image-comment">{`... ${checkComments(image.id)}`}</p>
-                </p>
-              </div>
+              ></img>        
+                 
+
+                    {/* <EditFormPage
+                    trigger={editButtonPopup}
+                    setTrigger={setEditButtonPopup}
+                    image={image}
+                  /> */}
+                  
+              {showOptions && userId === image.user_id && imageURL === image.url &&  (
+                
+                <div>
+                
+                  {/* <EditFormPage
+                    trigger={editButtonPopup}
+                    setTrigger={setEditButtonPopup}
+                    image={image}
+                  /> */}
+                  {showOptions && (
+                    <div className="post-options">
+                      <button
+                        className={`${image.id} post-option-delete`}
+                        onClick={handleDelete}
+                      >
+                        Delete
+                      </button>
+                      <button onClick={() => handleEdit(image.id)}>Edit</button>
+                      {/* <button>Go to post</button> */}
+                      <button onClick={() => setShowOptions(false)}>
+                        Cancel
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>

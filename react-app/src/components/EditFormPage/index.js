@@ -19,10 +19,14 @@ const EditFormPage = (props) => {
       ...image,
       caption: newImageCaption
     }
+
+
+
+
     let updatedImage = await dispatch(editOneImage(payload));
     if (updatedImage) {
       props.setTrigger(0);
-      setCaption('');
+      // setCaption('');
     }
   };
 
@@ -43,8 +47,8 @@ const EditFormPage = (props) => {
             <input
             type='text'
             name='caption'
-            onChange={updateCaption}
             value={caption}
+            onChange={(e) => setCaption(e.target.value)}
             required={true}
             ></input>
         </div>

@@ -142,7 +142,7 @@ function ImagesPage() {
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
-      <button>submit edit</button>
+      <button>submit</button>
     </form>
   );
 

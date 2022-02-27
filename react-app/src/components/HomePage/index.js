@@ -166,6 +166,7 @@ function HomePage() {
         placeholder="Edit"
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        required={true}
       />
       <button className="submit-edit">Submit Edit</button>
     </form>
@@ -322,6 +323,8 @@ function HomePage() {
                         <p id={comment.id} className={canEditComment(comment)}>
                           {comment.content}
                         </p>
+                        
+                        
                       </div>
                     </div>
                   );
