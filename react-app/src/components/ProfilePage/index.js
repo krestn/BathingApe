@@ -94,13 +94,13 @@ const ProfilePage = (props) => {
       <NavBar />
       <header className="profile-header-container">
         <div className="profile-avatar">
-          <p
-            //  srcSet={getUser(profileId)?.avatar} 
-            sx={{ width: 150, height: 150 }}>Avatar</p>
+        <img src={user.avatar}
+            className='userAvatar'
+          ></img>
         </div>
         <div className="column">
           <div className="profile-top-row">
-            <p>{getUser(profileId)?.username}</p>
+            <h1>{getUser(profileId)?.username}</h1>
             {+profileId !== user.id ? (
               <div>
                 {followersArr.filter(
@@ -110,14 +110,14 @@ const ProfilePage = (props) => {
                     className="profile-follow-button"
                     onClick={(event) => followProfileUser(profileId)}
                   >
-                    <p width={18}>Add User</p>
+                    <p>follow</p>
                   </button>
                 ) : (
                   <button
                     className="profile-unfollow-button"
                     onClick={(event) => unfollowProfileUser(profileId)}
                   >
-                    <p width={18}>User Icon</p>
+                    <p>unfollow</p>
                   </button>
                 )}
               </div>
@@ -139,7 +139,7 @@ const ProfilePage = (props) => {
             </p>
           </div>
           <div className="profile-bottom-row">
-            <h4>{getUser(profileId)?.email}</h4>
+            {/* <h4>{getUser(profileId)?.email}</h4> */}
           </div>
         </div>
       </header>
@@ -147,9 +147,6 @@ const ProfilePage = (props) => {
         <div className="image-container">
           {userImages.map((image) => (
             <div className="image-wrapper">
-              <div>
-                {image.caption}
-              </div>
               <EditFormPage
                     trigger={editButtonPopup}
                     setTrigger={setEditButtonPopup}
@@ -162,6 +159,9 @@ const ProfilePage = (props) => {
                 src={image.url}
                 alt="user_upload"
               ></img>        
+              <div className="imgCaption">
+                {image.caption}
+              </div>
                  
 
                     {/* <EditFormPage

@@ -1,1 +1,17 @@
 /* TODO Add site wide styles */
+
+.editCap{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.imgCaption{
+  overflow: hidden;
+word-break: break-word; 
+ max-width: 305px;
+ text-align: center;
+ padding-top: 10px;
+ padding-bottom: 20px;
+ min-width: 305px;
+background-color: white;}

@@ -2,24 +2,91 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
   margin-top: 16px;
+
+  padding: 20px;
+  width: 400px;
+  background-color: #93b7d5;
+  border-radius: 20px;
+  box-shadow: 
+  12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+  -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+
 }
 .profile-avatar {
-  margin-right: 3rem;
+  height: 80px;
+  width: 80px;  
+  border-radius: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 
+  12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  
 }
 .profile-follow-button {
-  width: 5rem;
-  cursor: pointer;
-}
-.profile-unfollow-button {
+  color: blue;
+  background-color: #e4ebf5;
   border: none;
-  background-color: transparent;
-  cursor: pointer;
+  min-width: 100px;
+
+  margin-left: 15px;
+  box-shadow: 
+  12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 100px;
+  text-align: center;
+
 }
+.profile-follow-button:hover{
+  cursor: pointer;
+  box-shadow: 
+  12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+  -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+
+}
+
+.profile-unfollow-button {
+  color: red;
+  background-color: #e4ebf5;
+  border: none;
+  min-width: 100px;
+
+
+  margin-left: 15px;
+  box-shadow: 
+  12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 100px;
+  text-align: center;
+
+}
+
+.profile-unfollow-button:hover{
+  cursor: pointer;
+  box-shadow: 
+  12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+  -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+
+}
+
 .profile-top-row {
   display: flex;
   align-items: center;
   flex-direction: row;
+  color: white;
 }
 .profile-top-row > p {
   padding-right: 1rem;
@@ -30,6 +97,22 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: white;
+  border: none;
+  min-width: 100px;
+  padding: 10px;
+
+  margin-left: 15px;
+  box-shadow: 
+  12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 100px;
+  text-align: center;
+
 }
 .profile-bottom-row {
   display: flex;
@@ -38,17 +121,19 @@
 .column {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 .profile-image {
   width: 285px;
   height: 285px;
   box-shadow: 0px 0px 4px rgba(75, 75, 75, 0.247);
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
   object-fit: cover;
+  border: 10px solid white;
+  background-color: white;
 }
-.image-wrapper:hover {
+/* .image-wrapper:hover {
   background-color: rgba(0, 0, 0, 0.37);
   background-blend-mode: multiply;
   z-index: 100;
@@ -56,9 +141,21 @@
 }
 .image-wrapper:hover .image-info {
   display: flex;
-}
+} */
 .image-wrapper {
-  position: relative;
+  background-color: #93b7d5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  background-color: #93b7d5;
+  border-radius: 20px;
+  box-shadow: 
+  12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+  -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+
 }
 .image-info {
   position: absolute;
@@ -93,17 +190,11 @@
   border-top: 1px solid rgba(156, 156, 156, 0.123);
   padding-top: 2.5rem;
 
+  
+
 }
-@media screen and (max-width: 800px) {
-  .image-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 525px) {
-  .image-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+
+
 .image-container-body {
   display: flex;
   justify-content: center;
