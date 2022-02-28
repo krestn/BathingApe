@@ -44,8 +44,8 @@ comment on posts.
 ### Bathing Ape Home Page
 ![main](https://user-images.githubusercontent.com/48869138/155947023-46c8c507-e150-4002-bd42-e3fd814d318e.JPG)
 
-
-
+### Main Feed
+![Feed](https://user-images.githubusercontent.com/48869138/155947032-c4124c00-2b20-411e-af3b-f0da4acf82c4.JPG)
 
 ### Bathing Ape Profile Page
 ![Profile Page](https://user-images.githubusercontent.com/48869138/155947008-75ef719b-6791-4cb7-9632-8018f6dd685a.JPG)
@@ -59,8 +59,6 @@ comment on posts.
 ![postform](https://user-images.githubusercontent.com/48869138/155947012-cf953c1a-c2d9-4222-8903-286ce73dda08.JPG)
 
 
-### Main Feed
-![Feed](https://user-images.githubusercontent.com/48869138/155947032-c4124c00-2b20-411e-af3b-f0da4acf82c4.JPG)
 
 
 
