@@ -31,7 +31,7 @@ comment on posts.
   * Posts: Users can create, read, update, and delete posts.
   *Likes: Users can create, read, and update/delete likes.
   * Follows:  Users can create, read, and update/delete posts.
-  * Comment: Users can create, read, and update comments.
+  * Comment: Users can create, read, update, and delete comments.
   * Users can only edit/update and delete posts and comments that they have created. 
    
 ### Bathing Ape Login Page 
