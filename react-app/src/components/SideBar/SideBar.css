@@ -73,6 +73,11 @@ max-width: 200px;
 width: 70px;  
 border-radius: 100%;
 
+background-image: url("https://cdn.landesa.org/wp-content/uploads/default-user-image.png");
+background-size: 80px 80px;
+background-repeat: no-repeat;
+background-position: center;
+
 
 }
 
