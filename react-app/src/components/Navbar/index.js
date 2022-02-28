@@ -43,7 +43,7 @@ const NavBar = () => {
             className="nav-icon"
             onClick={() => {
               setImageSelectPopup(true);
-            }}>+</p>
+            }}>📷+</p>
           <SelectImagePage
             trigger={imageSelectPopup}
             setTrigger={setImageSelectPopup}
