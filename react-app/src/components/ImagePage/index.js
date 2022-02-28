@@ -196,17 +196,16 @@ const ImagePage = (props) => {
                       {showEditDelete === comment.id &&
                         userId === comment.user_id && (
                           <div className="image-post-options">
-                            {/* <button
+                            <button
                               onClick={(e) => {
                                 props.onDeleteComment(
                                   props.image.id,
                                   comment.id,
-                                  setContentB
                                 );
                               }}
                             >
                               Delete
-                            </button> */}
+                            </button>
                             <button
                               onClick={() => {
                                 setEditB(true);
