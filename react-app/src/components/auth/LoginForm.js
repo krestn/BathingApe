@@ -41,7 +41,7 @@ const LoginForm = () => {
 
   const demoLogin = async (event) => {
     event.preventDefault();
-    const dEmail = "demo@bape.com";
+    const dEmail = "bape@bape.io";
     const dPassword = "password";
 
     const data = await dispatch(login(dEmail, dPassword));
