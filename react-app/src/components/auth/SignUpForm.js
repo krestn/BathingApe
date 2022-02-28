@@ -85,7 +85,6 @@ const SignUpForm = () => {
             {errors.map((error, ind) => (
               <div key={ind} className="errors">{error}</div>
             ))}
-            {console.log(errors)}
           </div>
           <div className="input-wrapper">
             <input

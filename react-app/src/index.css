@@ -49,3 +49,9 @@ background-color: white;}
 .upP{
   color: blue;
 }
+
+.errors{
+  color: red;
+  text-align: center;
+  margin-bottom: 5px;
+}
