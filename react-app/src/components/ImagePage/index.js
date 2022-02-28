@@ -132,7 +132,7 @@ const ImagePage = (props) => {
             <img
               src={getUser(props.image.user_id).avatar}
               className="image-page-avatar"></img>
-            <p>{getUser(props.image.user_id)?.username}</p>
+            <h2 className="userI">{getUser(props.image.user_id)?.username}</h2>
             {props.image.user_id === userId && (
               <p
                 className="image-options-icon"
