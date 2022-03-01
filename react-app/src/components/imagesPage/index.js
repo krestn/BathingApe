@@ -190,9 +190,11 @@ function ImagesPage() {
   return (
     <div>
       <NavBar />
+      
       <div className="post-page-body">
         <ul className="post-container">
           {imagesArr.map((image, i) => (
+        
             <div className="ind-post-container" key={`${image.id}`}>
               <div className="post-header">
                 <div

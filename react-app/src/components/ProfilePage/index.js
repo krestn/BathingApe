@@ -94,7 +94,7 @@ const ProfilePage = (props) => {
       <NavBar />
       <header className="profile-header-container">
         <div className="profile-avatar">
-        <img src={user.avatar}
+        <img src={getUser(profileId)?.avatar}
             className='userAvatar'
           ></img>
         </div>
