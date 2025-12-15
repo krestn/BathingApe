@@ -34,7 +34,7 @@ comment on posts.
   * Comment: Users can create, read, update, and delete comments.
   * Users can only edit/update and delete posts and comments that they have created. 
    
-### Bathing Ape Login Page 
+<!-- ### Bathing Ape Login Page 
 ![Splash](https://user-images.githubusercontent.com/48869138/155946840-5054ceb4-cf76-4c9a-97b7-f164b208597b.JPG)
 
 
@@ -56,9 +56,7 @@ comment on posts.
 
 
 ### Create Post Form (Modal)
-![postform](https://user-images.githubusercontent.com/48869138/155947012-cf953c1a-c2d9-4222-8903-286ce73dda08.JPG)
-
-
+![postform](https://user-images.githubusercontent.com/48869138/155947012-cf953c1a-c2d9-4222-8903-286ce73dda08.JPG) -->
 
 
 
